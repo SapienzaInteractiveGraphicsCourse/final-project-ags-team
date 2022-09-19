@@ -91,7 +91,7 @@ export default class Character {
         this.setBones(rootNode, bones);
 
         //Handle GUI
-        this.setGui();
+        // this.setGui();
 
         /* EVENT HANDLERS SECTION
          */
@@ -1055,6 +1055,7 @@ export default class Character {
         /**
          * MOVEMENT
          */
+        const { x, y, z } = this.characterBody.position;
         if (!this.main.closeUpActive) {
             if (
                 (this.keyboardSpace &&
@@ -1160,149 +1161,149 @@ export default class Character {
                 this.characterBody.velocity.x = 0;
             if (!this.keyboardDown && !this.keyboardUp)
                 this.characterBody.velocity.z = 0;
-        }
 
-        /**
-         * INTERACTION WITH OBJECTS
-         */
+            /**
+             * INTERACTION WITH OBJECTS
+             */
 
-        const { x, y, z } = this.characterBody.position;
-
-        if (this.keyboardE) {
-            //BLUE DESK ON THE RIGHT
-            if (z < -10.0 && z > -17.0 && x > 22.5) {
-                this.main.camera.goLookRightBlueDesk();
-                this.main.closeUpActive = true;
-            }
-
-            //YELLOW DESK ON THE RIGHT
-            else if (x > 12.9 && x < 19.7 && z < -22.0) {
-                this.main.camera.goLookYellowDesk();
-                this.main.closeUpActive = true;
-            }
-
-            //BUCKET FRONT
-            else if (x > -28.0 && x < -25.5 && z < -22.0 && z > -24.0) {
-                this.main.closeUpActive = true;
-                this.main.camera.goLookBucket();
-                this.lookedInBucket = true;
-            }
-
-            //BUCKET LATERAL
-            else if (x < -22.5 && x > -24.0 && z > -28.5 && z < -25.5) {
-                this.main.closeUpActive = true;
-                this.main.camera.goLookBucketLateral();
-                this.lookedInBucket = true;
-            }
-
-            //PINPAD
-            else if (
-                z > 5.3 &&
-                z < 9.6 &&
-                x > 6.4 &&
-                x < 8.4 &&
-                !this.main.rightDoorOpen
-            ) {
-                if (!this.main.closeUpActive) this.main.camera.goLookPinPad();
-                this.main.closeUpActive = true;
-                this.main.pinPadActive = true;
-            }
-
-            //NOTEPAD
-            else if (x < -26.0 && z > 13.5 && z < 17.2) {
-                document.getElementById(
-                    "dialogue-box-container"
-                ).style.opacity = 1;
-                document.getElementById(
-                    "dialogue-box-container"
-                ).style.pointerEvents = "initial";
-                document.getElementById("dialogue-box-text").innerHTML =
-                    "3579.....I wonder what it means";
-                setTimeout(() => {
-                    document.getElementById(
-                        "dialogue-box-container"
-                    ).style.opacity = 0;
-                    document.getElementById(
-                        "dialogue-box-container"
-                    ).style.pointerEvents = "none";
-                }, 2000);
-            }
-
-            //RED BUTTON
-            else if (
-                z > 20.0 &&
-                z < 24.5 &&
-                x > 27.5 &&
-                !this.main.rearLeftDoorOpen
-            ) {
-                if (this.characterBody.position.y > 11.0) {
+            if (this.keyboardE) {
+                //BLUE DESK ON THE RIGHT
+                if (z < -10.0 && z > -17.0 && x > 22.5) {
+                    this.main.camera.goLookRightBlueDesk();
                     this.main.closeUpActive = true;
-                    this.main.rearLeftDoorOpen = true;
-                    this.main.physics.bodies.filter(
-                        (object) =>
-                            object.name === "mainRoom.slideDoor.left.rear"
-                    )[0].collisionFilterMask = 0;
-                    turnRightTween(this).start();
-                    let l = this.scene.getObjectByName(
-                        "mainRoom.slideDoor.left.rear"
-                    ).children[0].children[0].children[0];
-                    let r = this.scene.getObjectByName(
-                        "mainRoom.slideDoor.left.rear"
-                    ).children[0].children[0].children[1];
-                    openLeftDoor(l);
-                    openRightDoor(r);
-                    this.main.camera.goLookLeftRearDoor();
                 }
-            } else if (
-                /**
-                 * FINAL DOOR
-                 */
-                this.characterBody.position.z <= -25.4 &&
-                this.characterBody.position.z > -28.5 &&
-                this.lookedInBucket &&
-                !this.main.finalDoorOpen
-            ) {
-                if (
-                    this.characterBody.position.x >= -6.0 &&
-                    this.characterBody.position.x <= 6.0
+
+                //YELLOW DESK ON THE RIGHT
+                else if (x > 12.9 && x < 19.7 && z < -22.0) {
+                    this.main.camera.goLookYellowDesk();
+                    this.main.closeUpActive = true;
+                }
+
+                //BUCKET FRONT
+                else if (x > -28.0 && x < -25.5 && z < -22.0 && z > -24.0) {
+                    this.main.closeUpActive = true;
+                    this.main.camera.goLookBucket();
+                    this.lookedInBucket = true;
+                }
+
+                //BUCKET LATERAL
+                else if (x < -22.5 && x > -24.0 && z > -28.5 && z < -25.5) {
+                    this.main.closeUpActive = true;
+                    this.main.camera.goLookBucketLateral();
+                    this.lookedInBucket = true;
+                }
+
+                //PINPAD
+                else if (
+                    z > 5.3 &&
+                    z < 9.6 &&
+                    x > 6.4 &&
+                    x < 8.4 &&
+                    !this.main.rightDoorOpen
                 ) {
-                    console.log("FINAL DOOR KNOCK");
+                    if (!this.main.closeUpActive)
+                        this.main.camera.goLookPinPad();
                     this.main.closeUpActive = true;
-                    this.main.camera.goLookFinalDoor();
-                    document.getElementById("knock-audio").play();
-                    knockTween(this);
-                    this.main.physics.bodies.filter(
-                        (object) => object.name === "mainRoom.finalDoor"
-                    )[0].collisionFilterMask = 0;
-                    let door =
-                        this.main.scene.getObjectByName("mainRoom.finalDoor")
-                            .children[0].children[0].children[0];
-                    let elem1 = door.children[0].children[0].children[1];
-                    openFinalDoor(elem1);
-
-                    //this.main.camera.goFollowRobot();
-                    console.log(this.characterBody.position);
+                    this.main.pinPadActive = true;
                 }
-            }
-            /*else if (this.characterBody.position.z <= -28.5) {
-                console.log(this.characterBody.position)
-            }*/
-            //TROPHY
-            else if (
-                this.characterBody.position.z <= -83 &&
-                this.characterBody.position.z > -88 &&
-                this.characterBody.position.x > -2 &&
-                this.characterBody.position.x < 2 &&
-                !this.main.gameWon
-            ) {
-                this.main.clock.stop();
-                this.main.closeUpActive = true;
-                turnFrontTween(this).start();
-                bodyDanceTween(this);
-                this.main.closeUpActive = true;
-                this.main.camera.goToDistance();
-            } else {
-                noTween(this);
+
+                //NOTEPAD
+                else if (x < -26.0 && z > 13.5 && z < 17.2) {
+                    document.getElementById(
+                        "dialogue-box-container"
+                    ).style.opacity = 1;
+                    document.getElementById(
+                        "dialogue-box-container"
+                    ).style.pointerEvents = "initial";
+                    document.getElementById("dialogue-box-text").innerHTML =
+                        "3579.....I wonder what it means";
+                    setTimeout(() => {
+                        document.getElementById(
+                            "dialogue-box-container"
+                        ).style.opacity = 0;
+                        document.getElementById(
+                            "dialogue-box-container"
+                        ).style.pointerEvents = "none";
+                    }, 2000);
+                }
+
+                //RED BUTTON
+                else if (
+                    z > 20.0 &&
+                    z < 24.5 &&
+                    x > 27.5 &&
+                    !this.main.rearLeftDoorOpen
+                ) {
+                    if (this.characterBody.position.y > 11.0) {
+                        this.main.closeUpActive = true;
+                        this.main.rearLeftDoorOpen = true;
+                        this.main.physics.bodies.filter(
+                            (object) =>
+                                object.name === "mainRoom.slideDoor.left.rear"
+                        )[0].collisionFilterMask = 0;
+                        turnRightTween(this).start();
+                        let l = this.scene.getObjectByName(
+                            "mainRoom.slideDoor.left.rear"
+                        ).children[0].children[0].children[0];
+                        let r = this.scene.getObjectByName(
+                            "mainRoom.slideDoor.left.rear"
+                        ).children[0].children[0].children[1];
+                        openLeftDoor(l);
+                        openRightDoor(r);
+                        this.main.camera.goLookLeftRearDoor();
+                    }
+                } else if (
+                    /**
+                     * FINAL DOOR
+                     */
+                    this.characterBody.position.z <= -25.4 &&
+                    this.characterBody.position.z > -28.5 &&
+                    this.lookedInBucket &&
+                    !this.main.finalDoorOpen
+                ) {
+                    if (
+                        this.characterBody.position.x >= -6.0 &&
+                        this.characterBody.position.x <= 6.0
+                    ) {
+                        console.log("FINAL DOOR KNOCK");
+                        this.main.closeUpActive = true;
+                        this.main.camera.goLookFinalDoor();
+                        document.getElementById("knock-audio").play();
+                        knockTween(this);
+                        this.main.physics.bodies.filter(
+                            (object) => object.name === "mainRoom.finalDoor"
+                        )[0].collisionFilterMask = 0;
+                        let door =
+                            this.main.scene.getObjectByName(
+                                "mainRoom.finalDoor"
+                            ).children[0].children[0].children[0];
+                        let elem1 = door.children[0].children[0].children[1];
+                        openFinalDoor(elem1);
+
+                        //this.main.camera.goFollowRobot();
+                        console.log(this.characterBody.position);
+                    }
+                }
+                /*else if (this.characterBody.position.z <= -28.5) {
+                        console.log(this.characterBody.position)
+                    }*/
+                //TROPHY
+                else if (
+                    this.characterBody.position.z <= -83 &&
+                    this.characterBody.position.z > -88 &&
+                    this.characterBody.position.x > -2 &&
+                    this.characterBody.position.x < 2 &&
+                    !this.main.gameWon
+                ) {
+                    this.main.clock.stop();
+                    this.main.closeUpActive = true;
+                    turnFrontTween(this).start();
+                    bodyDanceTween(this);
+                    this.main.closeUpActive = true;
+                    this.main.camera.goToDistance();
+                } else {
+                    noTween(this);
+                }
             }
         }
 
