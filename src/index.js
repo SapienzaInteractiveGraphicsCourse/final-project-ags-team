@@ -55,6 +55,6 @@ function init() {
         document.getElementById("rules").style.left = "0";
     };
     startButton.onclick = () => {
-        window.location.href = `game.html?diff=${difficulty}`;
+        window.location.href = `./game.html?diff=${difficulty}`;
     };
 }
