@@ -1,0 +1,11 @@
+Model Information:
+* title:	Blast Doors
+* source:	https://sketchfab.com/3d-models/blast-doors-59ecab6f05a14ab490a11f4107384324
+* author:	cahendricks (https://sketchfab.com/cahendricks)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Blast Doors" (https://sketchfab.com/3d-models/blast-doors-59ecab6f05a14ab490a11f4107384324) by cahendricks (https://sketchfab.com/cahendricks) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

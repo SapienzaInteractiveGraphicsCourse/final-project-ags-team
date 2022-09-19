@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>IG-PROJECT</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div class="main"></div>
+        <div id="controls-container" class="controls">
+            <!-- <button id="head-tween">Head tween</button>
+            <button id="idle-tween">Idle tween</button>
+            <button id="yes-tween">Yes</button>
+            <button id="no-tween">No</button>
+            <button id="thumbsUp-tween">Thumbs Up tween</button>
+            <button id="wave-tween">Wave tween</button>
+            <button id="dance-tween">Dance tween</button>
+            <button id="walk-tween">Walk tween</button>
+            <button id="death-tween">Death tween</button>
+            <button id="knock-tween">Knock tween</button>
+            <button id="open-left-front-door">Open front left door</button>
+            <button id="open-left-rear-door">Open rear left door</button>
+            <button id="open-right-door">Open right door</button>
+            <button id="open-final-door">Open final door</button>
+            <button id="lean-tween">lean-tween</button> -->
+            <audio id="knock-audio" src="music/knocking.mp3"></audio>
+            <audio id="sliding-audio" src="music/slidingDoors.mp3"></audio>
+            <audio id="dance-audio" src="music/dance.mp3"></audio>
+        </div>
+        <div class="timer-button" id="timer-button">
+            <h1 class="timer-text" id="timer-box-text"></h1>
+        </div>
+
+        <div id="game-over-container" class="game-container">
+            <h1 id="game-over" class="main-title">GAME OVER</h1>
+            <div
+                class="start-button-container"
+                onclick='window.location.href = "index.html"'
+            >
+                <h2 class="start-button">Try again!</h2>
+            </div>
+        </div>
+
+        <div id="game-won-container" class="game-container">
+            <h1 id="game-won" class="main-title">YOU WON</h1>
+            <div
+                class="start-button-container"
+                onclick='window.location.href = "index.html"'
+            >
+                <h2 class="start-button">Play again!</h2>
+            </div>
+        </div>
+
+        <div class="exit-button" id="exit-button">
+            <div class="line1"></div>
+            <div class="line2"></div>
+        </div>
+
+        <div class="dialogue-box-container" id="dialogue-box-container">
+            <div class="dialogue-box">
+                <h1 id="dialogue-box-text"></h1>
+            </div>
+        </div>
+
+        <div class="input-box-container" id="input-box-container">
+            <div class="dialogue-box" id="dialogue-box">
+                <h1>Insert Code</h1>
+                <input type="text" id="input-box" maxlength="4" />
+            </div>
+        </div>
+
+        <div id="help-box">
+            <h1>E</h1>
+        </div>
+
+        <div id="spacebar-help-box">
+            <h2>SPACEBAR</h2>
+        </div>
+
+        <div class="loading-screen" id="loading-screen">
+            <label for="progress-bar">Loading...</label>
+            <progress id="progress-bar" value="0" max="100"></progress>
+        </div>
+
+        <script type="module" src="./game.js"></script>
+    </body>
+</html>

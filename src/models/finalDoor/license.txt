@@ -1,0 +1,11 @@
+Model Information:
+* title:	SCI-FI Door
+* source:	https://sketchfab.com/3d-models/sci-fi-door-c6a6ef337b6c4f51ba68c2f0708c9622
+* author:	clearsky5201314 (https://sketchfab.com/clearsky5201314)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "SCI-FI Door" (https://sketchfab.com/3d-models/sci-fi-door-c6a6ef337b6c4f51ba68c2f0708c9622) by clearsky5201314 (https://sketchfab.com/clearsky5201314) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

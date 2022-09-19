@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hologram Console
+* source:	https://sketchfab.com/3d-models/hologram-console-bfbbb481e98e4be38774b1d0204c192c
+* author:	TooManyDemons (https://sketchfab.com/toomanydemons)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hologram Console" (https://sketchfab.com/3d-models/hologram-console-bfbbb481e98e4be38774b1d0204c192c) by TooManyDemons (https://sketchfab.com/toomanydemons) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

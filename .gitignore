@@ -1,0 +1,6 @@
+\*.DS_Store
+.vscode/
+.obsidian/
+src/models/.DS_Store
+src/.DS_Store
+.DS_Store
