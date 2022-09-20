@@ -71,7 +71,6 @@ export function noTween(robot) {
         .start();
 }
 
-
 /*  Animation coupled with the challenge involving the bin:
     The robot has to lean forward and then go back to the initial position
 */
@@ -93,29 +92,6 @@ export function leanTween(robot, angle) {
             .start();
     }
     else {
-        /*if (angle === 0) {
-            new TWEEN.Tween(robot.footL.position)
-                .to({ z: 0.000570146774407476 })
-                .easing(TWEEN.Easing.Quadratic.Out)
-                .start();
-            new TWEEN.Tween(robot.footR.position)
-                .to({ z: 0.000570139964111149 })
-                .easing(TWEEN.Easing.Quadratic.Out)
-                .start();
-    
-        }
-        else {
-            new TWEEN.Tween(robot.footL.position)
-                .to({ z: -0.0044 })
-                .easing(TWEEN.Easing.Quadratic.Out)
-                .start();
-            new TWEEN.Tween(robot.footR.position)
-                .to({ z: -0.0044 })
-                .easing(TWEEN.Easing.Quadratic.Out)
-                .start();
-        }
-    */
-
         new TWEEN.Tween(robot.upperLegL.rotation)
             .to({ x: 2.4863 })
             .easing(TWEEN.Easing.Quadratic.Out)
@@ -429,6 +405,7 @@ export function thumbsDownTween(robot) {
     return tween;
 }
 
+//Function that realizes the victory dance. Important: head spin and bounce of the arms
 export function bodyDanceTween(robot) {
 
     new TWEEN.Tween(robot.body.rotation)
@@ -455,7 +432,7 @@ export function bodyDanceTween(robot) {
         .to({ x: 0.3907, y: -0.0446, z: 3.4373933246063144e-7 }, 1000)
         .easing(TWEEN.Easing.Linear.None)
         .onComplete(() => {
-            new TWEEN.Tween(robot.neck.rotation) //testa
+            new TWEEN.Tween(robot.neck.rotation) //Head spin
                 .to({ x: -0.1653, y: 0.1911, z: 0.2957 }, 200)
                 .easing(TWEEN.Easing.Quadratic.Out)
                 .onComplete(() => {
@@ -496,6 +473,8 @@ export function bodyDanceTween(robot) {
                                                 .to({ y: -2 * Math.PI }, 500)
                                                 .easing(TWEEN.Easing.Quadratic.Out)
                                                 .onComplete(() => {
+
+                                                    //INITIAL POSITION
                                                     new TWEEN.Tween(robot.body.rotation)
                                                         .to({ x: 2.1138427250003886e-36, }, 800)
                                                         .easing(TWEEN.Easing.Linear.None)
@@ -562,163 +541,165 @@ export function bodyDanceTween(robot) {
 
 export function waveFinishTween(robot) {
     new TWEEN.Tween(robot.shoulderR.rotation)
-        .to({ x: -0.10898371808911646, y: -6.598976085917453e-7, z: 2.686421566968824, }, 800)
+        .to({ x: -0.10898371808911646, y: -6.598976085917453e-7, z: 2.686421566968824, }, 200)
         .easing(TWEEN.Easing.Quadratic.Out)
+        .onComplete(() => {
+            robot.main.closeUpActive = false;
+        })
         .start();
 
     new TWEEN.Tween(robot.upperArmR.rotation)
-        .to({ x: -3.00467658726543, y: 1.2647589033354352, z: -3.133786251177098, }, 800)
+        .to({ x: -3.00467658726543, y: 1.2647589033354352, z: -3.133786251177098, }, 200)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
     new TWEEN.Tween(robot.lowerArmR.rotation)
-        .to({ x: 1.5924057846474595, y: -1.0731507461813292, z: 1.8341744463831946, }, 800)
+        .to({ x: 1.5924057846474595, y: -1.0731507461813292, z: 1.8341744463831946, }, 200)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
     new TWEEN.Tween(robot.neck.rotation)
         .to(
-            { x: -0.08598086606694484, y: -0.030781048113647718, z: 0.05532293059308308, }, 800)
+            { x: -0.08598086606694484, y: -0.030781048113647718, z: 0.05532293059308308, }, 200)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
     new TWEEN.Tween(robot.ring1R.rotation) //mignolo
-        .to({ x: 2.0308031237629196, y: 0.9080663435840112, z: -0.9430903747676498, }, 150)
+        .to({ x: 2.0308031237629196, y: 0.9080663435840112, z: -0.9430903747676498, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
     new TWEEN.Tween(robot.ring2R.rotation) //mignolo
-        .to({ x: 0.2314505243580185, y: 0.16359926060669314, z: 0.8729432557646827, }, 150)
+        .to({ x: 0.2314505243580185, y: 0.16359926060669314, z: 0.8729432557646827, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
     new TWEEN.Tween(robot.middle1R.rotation) //mignolo
-        .to({ x: -0.06356590149694044, y: -0.06346705740446676, z: 1.1048657896799357, }, 150)
+        .to({ x: -0.06356590149694044, y: -0.06346705740446676, z: 1.1048657896799357, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
     new TWEEN.Tween(robot.middle2R.rotation) //mignolo
-        .to({ x: 0.09968116913559923, y: -0.03203014545859623, z: 1.061314611564705, }, 150)
+        .to({ x: 0.09968116913559923, y: -0.03203014545859623, z: 1.061314611564705, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
     new TWEEN.Tween(robot.indexR.rotation) //mignolo
-        .to({ x: -1.9068990040299865, y: -1.0366460832544102, z: -0.9294445756102357, }, 150)
+        .to({ x: -1.9068990040299865, y: -1.0366460832544102, z: -0.9294445756102357, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
     new TWEEN.Tween(robot.index2R.rotation) //mignolo
-        .to({ x: -0.05851721796114638, y: -0.06463397545402096, z: 1.109980777526842, }, 150)
+        .to({ x: -0.05851721796114638, y: -0.06463397545402096, z: 1.109980777526842, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
     new TWEEN.Tween(robot.thumbR.rotation) //mignolo
-        .to({ x: 2.8878214068890493, y: -0.9211440514236585, z: 1.3133193709709825, }, 150)
+        .to({ x: 2.8878214068890493, y: -0.9211440514236585, z: 1.3133193709709825, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
     new TWEEN.Tween(robot.thumb2R.rotation) //mignolo
-        .to({ x: -1.717841085700298, y: -0.639071107342826, z: -2.950171639213023, }, 150)
+        .to({ x: -1.717841085700298, y: -0.639071107342826, z: -2.950171639213023, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 }
 
 export function waveTween(robot) {
     new TWEEN.Tween(robot.shoulderR.rotation)
-        .to({ z: 1.5635 }, 800)
+        .to({ z: 1.5635 }, 200)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
     new TWEEN.Tween(robot.upperArmR.rotation)
-        .to({ y: -0.5352, z: -3.141592653589793 }, 800)
+        .to({ y: -0.5352, z: -3.141592653589793 }, 200)
         .easing(TWEEN.Easing.Quadratic.Out)
         .onComplete(() => {
 
             new TWEEN.Tween(robot.lowerArmR.rotation)
-                .to({ y: -1.0954 }, 800)
+                .to({ y: -1.0954 }, 150)
                 .easing(TWEEN.Easing.Quadratic.Out)
                 .start();
 
             new TWEEN.Tween(robot.neck.rotation)
-                .to({ z: -0.2154 }, 800)
+                .to({ z: -0.2154 }, 150)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .start();
+            //.onComplete(() => {
+
+            new TWEEN.Tween(robot.ring1R.rotation) //mignolo
+                .to({ x: 2.0308031237629196, y: 0.9080663435840112, z: -2.3735, }, 100)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .start();
+
+            new TWEEN.Tween(robot.ring2R.rotation) //mignolo
+                .to({ x: -0.1219, y: -0.0766, z: 0.0899 }, 100)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .start();
+
+            new TWEEN.Tween(robot.middle1R.rotation) //mignolo
+                .to({ x: -0.06356590149694044, y: -0.06346705740446676, z: -0.0904, }, 100)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .start();
+
+            new TWEEN.Tween(robot.middle2R.rotation) //mignolo
+                .to({ x: 0.09968116913559923, y: -0.03203014545859623, z: 0.2639, }, 100)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .start();
+
+            new TWEEN.Tween(robot.indexR.rotation) //mignolo
+                .to({ x: -1.9068990040299865, y: -1.1349, z: -2.0538, }, 100)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .start();
+
+            new TWEEN.Tween(robot.index2R.rotation) //mignolo
+                .to({ x: -0.05851721796114638, y: -0.06463397545402096, z: 0.0451, }, 100)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .start();
+
+            new TWEEN.Tween(robot.thumbR.rotation) //mignolo
+                .to({ x: 2.8878214068890493, y: -1.7593, z: 1.5259, }, 100)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .start();
+
+            new TWEEN.Tween(robot.thumb2R.rotation) //mignolo
+                .to({ x: -2.8186, y: -0.8862, z: -2.9733 }, 100)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .start();
+
+            new TWEEN.Tween(robot.lowerArmR.rotation)
+                .to({ y: -0.4556 }, 150)
                 .easing(TWEEN.Easing.Quadratic.Out)
                 .onComplete(() => {
 
-                    new TWEEN.Tween(robot.ring1R.rotation) //mignolo
-                        .to({ x: 2.0308031237629196, y: 0.9080663435840112, z: -2.3735, }, 150)
-                        .easing(TWEEN.Easing.Quadratic.Out)
-                        .start();
-
-                    new TWEEN.Tween(robot.ring2R.rotation) //mignolo
-                        .to({ x: -0.1219, y: -0.0766, z: 0.0899 }, 150)
-                        .easing(TWEEN.Easing.Quadratic.Out)
-                        .start();
-
-                    new TWEEN.Tween(robot.middle1R.rotation) //mignolo
-                        .to({ x: -0.06356590149694044, y: -0.06346705740446676, z: -0.0904, }, 150)
-                        .easing(TWEEN.Easing.Quadratic.Out)
-                        .start();
-
-                    new TWEEN.Tween(robot.middle2R.rotation) //mignolo
-                        .to({ x: 0.09968116913559923, y: -0.03203014545859623, z: 0.2639, }, 150)
-                        .easing(TWEEN.Easing.Quadratic.Out)
-                        .start();
-
-                    new TWEEN.Tween(robot.indexR.rotation) //mignolo
-                        .to({ x: -1.9068990040299865, y: -1.1349, z: -2.0538, }, 150)
-                        .easing(TWEEN.Easing.Quadratic.Out)
-                        .start();
-
-                    new TWEEN.Tween(robot.index2R.rotation) //mignolo
-                        .to({ x: -0.05851721796114638, y: -0.06463397545402096, z: 0.0451, }, 150)
-                        .easing(TWEEN.Easing.Quadratic.Out)
-                        .start();
-
-                    new TWEEN.Tween(robot.thumbR.rotation) //mignolo
-                        .to({ x: 2.8878214068890493, y: -1.7593, z: 1.5259, }, 150)
-                        .easing(TWEEN.Easing.Quadratic.Out)
-                        .start();
-
-                    new TWEEN.Tween(robot.thumb2R.rotation) //mignolo
-                        .to({ x: -2.8186, y: -0.8862, z: -2.9733 }, 150)
-                        .easing(TWEEN.Easing.Quadratic.Out)
-                        .start();
-
                     new TWEEN.Tween(robot.lowerArmR.rotation)
-                        .to({ y: -0.4556 }, 200)
+                        .to({ y: -1.0962 }, 150)
                         .easing(TWEEN.Easing.Quadratic.Out)
                         .onComplete(() => {
 
                             new TWEEN.Tween(robot.lowerArmR.rotation)
-                                .to({ y: -1.0962 }, 200)
+                                .to({ y: -0.4556 }, 150)
                                 .easing(TWEEN.Easing.Quadratic.Out)
                                 .onComplete(() => {
 
                                     new TWEEN.Tween(robot.lowerArmR.rotation)
-                                        .to({ y: -0.4556 }, 200)
+                                        .to({ y: -1.0962 }, 150)
                                         .easing(TWEEN.Easing.Quadratic.Out)
                                         .onComplete(() => {
 
                                             new TWEEN.Tween(robot.lowerArmR.rotation)
-                                                .to({ y: -1.0962 }, 200)
+                                                .to({ y: -0.4556 }, 150)
                                                 .easing(TWEEN.Easing.Quadratic.Out)
                                                 .onComplete(() => {
 
                                                     new TWEEN.Tween(robot.lowerArmR.rotation)
-                                                        .to({ y: -0.4556 }, 200)
+                                                        .to({ y: -1.0962, }, 150)
                                                         .easing(TWEEN.Easing.Quadratic.Out)
-                                                        .onComplete(() => {
-
-                                                            new TWEEN.Tween(robot.lowerArmR.rotation)
-                                                                .to({ y: -1.0962, }, 200)
-                                                                .easing(TWEEN.Easing.Quadratic.Out)
-                                                                .onComplete(
-                                                                    () => {
-                                                                        waveFinishTween(robot);
-                                                                    }
-                                                                )
-                                                                .start();
-                                                        })
+                                                        .onComplete(
+                                                            () => {
+                                                                waveFinishTween(robot);
+                                                            }
+                                                        )
                                                         .start();
                                                 })
                                                 .start();
@@ -730,6 +711,8 @@ export function waveTween(robot) {
                         .start();
                 })
                 .start();
+            //})
+            //.start();
         })
         .start();
 }

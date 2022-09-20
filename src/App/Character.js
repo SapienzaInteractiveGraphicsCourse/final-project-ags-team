@@ -163,7 +163,7 @@ export default class Character {
         window.addEventListener("keyup", this.handleKeyPress.bind(this));
     }
 
-    doNothing() {}
+    doNothing() { }
 
     handleKeyPress(e) {
         const { keyCode, type } = e;
@@ -1198,7 +1198,7 @@ export default class Character {
                     z > 5.3 &&
                     z < 9.6 &&
                     x > 6.4 &&
-                    x < 8.4 &&
+                    x < 8.2 &&
                     !this.main.rightDoorOpen
                 ) {
                     if (!this.main.closeUpActive)
@@ -1209,6 +1209,7 @@ export default class Character {
 
                 //NOTEPAD
                 else if (x < -26.0 && z > 13.5 && z < 17.2) {
+                    turnLeftTween(this).start();
                     document.getElementById(
                         "dialogue-box-container"
                     ).style.opacity = 1;
@@ -1216,7 +1217,7 @@ export default class Character {
                         "dialogue-box-container"
                     ).style.pointerEvents = "initial";
                     document.getElementById("dialogue-box-text").innerHTML =
-                        "3579.....I wonder what it means";
+                        "3579.....I wonder what that means";
                     setTimeout(() => {
                         document.getElementById(
                             "dialogue-box-container"
@@ -1366,7 +1367,7 @@ export default class Character {
                 z > 5.3 &&
                 z < 9.6 &&
                 x > 6.4 &&
-                x < 8.0 &&
+                x < 8.2 &&
                 !this.main.rightDoorOpen
             ) {
                 document.getElementById("help-box").style.opacity = 1;

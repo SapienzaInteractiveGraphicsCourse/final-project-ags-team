@@ -3,7 +3,7 @@ import Main from "./Main.js";
 import { OrbitControls } from "./../three/controls/OrbitControls.js";
 import { TWEEN } from "../three/libs/tween.module.min.js";
 import { activate_orbit_controls, get_center } from "./Utils/Functions.js";
-import { openRightDoor, openLeftDoor } from "./Animations.js";
+import { openRightDoor, openLeftDoor, waveTween } from "./Animations.js";
 import {
     leanTween,
     noTween,
@@ -413,7 +413,9 @@ export default class Camera {
         const returnToPositionTween = new TWEEN.Tween(this.mainCamera.position)
             .to({ x: x, y: 25, z: 25 + z }, 800)
             .easing(TWEEN.Easing.Quadratic.InOut)
-            .onComplete(() => (this.main.closeUpActive = false))
+            .onComplete(() => {
+                waveTween(this.main.world.character);
+            })
             .start();
 
         const returnToRotationTween = new TWEEN.Tween(this.mainCamera.rotation)
