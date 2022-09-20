@@ -29,6 +29,8 @@ export default class Camera {
         this.scene.add(this.orbitControlsCamera);
 
         this.setButton()
+
+        this.beginning = true;
     }
 
     create_main_camera() {
@@ -414,7 +416,13 @@ export default class Camera {
             .to({ x: x, y: 25, z: 25 + z }, 800)
             .easing(TWEEN.Easing.Quadratic.InOut)
             .onComplete(() => {
-                waveTween(this.main.world.character);
+                if (this.beginning) {
+                    waveTween(this.main.world.character);
+                    this.beginning = false;
+                }
+                else {
+                    this.main.closeUpActive = false;
+                }
             })
             .start();
 
