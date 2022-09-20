@@ -1,12 +1,12 @@
 # Markdown Tutorial
 
-* elenco puntato
-* elenco puntato
+-   elenco puntato
+-   elenco puntato
 
 1. elenco numerato
 2. elenco numerato
 
-*corsivo*
+_corsivo_
 **grassetto**
 
 `codice inline`
@@ -20,10 +20,12 @@ Immagine:
 
 ## Bonus
 
-$$\begin{align}
+$$
+\begin{align}
 E_1 = \Delta U_1 T + \Delta V_1 B \\
 E_2 = \Delta U_2 T + \Delta V_2 B
-\end{align}$$
+\end{align}
+$$
 
 # Objects
 
@@ -34,9 +36,9 @@ The entire scene is composed by the following objects:
 
 There are actually three flat grounds:
 
-* the ground of the main space subdivided in smaller room;
-* the ground of the narrow hallway beyond the final room;
-* the ground of the final space reachable through the above-mentioned hallway.
+-   the ground of the main space subdivided in smaller room;
+-   the ground of the narrow hallway beyond the final room;
+-   the ground of the final space reachable through the above-mentioned hallway.
 
 ### Create
 
@@ -47,10 +49,10 @@ The code for realizing them is put in common with the help of a function in `src
 ```
 export function create_ground(w, h, texture) {
     const geometry = new THREE.PlaneBufferGeometry(w, h);
-    const material = new  THREE.MeshPhongMaterial({ 
+    const material = new  THREE.MeshPhongMaterial({
         map: texture.baseColor,
         bumpMap: texture.normal
-    }); 
+    });
 
     return new THREE.Mesh(geometry, material);
 }
@@ -82,8 +84,8 @@ Note that the actual transformations are parameterized by the dimensions of the 
 
 Within the scene there are 14 walls. We can classify them among two main groups:
 
-* Standard walls, i.e. the flat ones, without holes.
-* Walls with doors, i.e. the ones which have a hole in correspondence of the respective door.
+-   Standard walls, i.e. the flat ones, without holes.
+-   Walls with doors, i.e. the ones which have a hole in correspondence of the respective door.
 
 ### Standard
 
@@ -96,10 +98,10 @@ The code for realizing them is put in common with the help of a function in `src
 ```
 export function create_wall(w, h, d, segments, texture) {
     const geometry = new THREE.BoxBufferGeometry(w, h, d, segments, segments, segments);
-    const material = new  THREE.MeshPhongMaterial({ 
+    const material = new  THREE.MeshPhongMaterial({
         map: texture.baseColor,
         bumpMap: texture.normal
-    }); 
+    });
 
     return new THREE.Mesh(geometry, material);
 }
@@ -123,7 +125,7 @@ Note that the actual transformations are parameterized by the dimensions of the 
 
 #### Create
 
-They are realized as `ExtrudeGeometry` (*ThreeJS* object for extruding a 2D shape to a 3D geometry), on the basis of a custom-defined `Shape`, paired with `MeshPhongMaterial`; a specific texture is bound to the material.
+They are realized as `ExtrudeGeometry` (_ThreeJS_ object for extruding a 2D shape to a 3D geometry), on the basis of a custom-defined `Shape`, paired with `MeshPhongMaterial`; a specific texture is bound to the material.
 
 The code for realizing them is put in common with the help of a function in `src > App > Utils > RoomFunctions.js`:
 
@@ -160,11 +162,11 @@ export function create_wall_with_door(wallSize, doorSize, texture) {
     // it's necessary to apply these settings in order to correctly display the texture on a shape geometry
     texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
     texture.repeat.set( 0.05, 0.05 );
-    const material = new THREE.MeshPhongMaterial({ 
+    const material = new THREE.MeshPhongMaterial({
         map: texture
     });
     const wall = new THREE.Mesh(extrudeGeometry, material);
-    
+
     return wall;
 }
 ```
@@ -194,28 +196,28 @@ Note that the actual transformations are parameterized by the dimensions of the 
 
 The imported models used in the project are located in `src > models`.
 
-Here a complete list of them, with the indication of their original source (the names used in the list recall the ones assigned to the corresponding *ThreeJS* objects after the import):
+Here a complete list of them, with the indication of their original source (the names used in the list recall the ones assigned to the corresponding _ThreeJS_ objects after the import):
 
-* [robotExpressive](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
-* [sciFiCrate](https://sketchfab.com/3d-models/gart-130-task-2-sci-fi-crate-b0e057741926412fbcebb4bc74fd775d)
-* [desk](https://sketchfab.com/3d-models/lab-table-a6585466b3bb4417bd0338c74328b209)
-* [oscilloscope](https://sketchfab.com/3d-models/oscillograph-2e045af8198542a4b8d06d1d736c840b)
-* [desk2](https://sketchfab.com/3d-models/lab-bench-1ac2a62c52a848bbaf746146dc7253f8)
-* [desk3](https://sketchfab.com/3d-models/lab-bench-1ac2a62c52a848bbaf746146dc7253f8)
-* [caldurun](https://market.pmnd.rs/model/cauldron)
-* [redButton](https://sketchfab.com/3d-models/red-button-e7685cccf7364682bc6a7883d0b8c503)
-* [sign](TODO)
-* [bucket](https://market.pmnd.rs/model/wood-bucket)
-* [hologramConsole](https://sketchfab.com/3d-models/hologram-console-bfbbb481e98e4be38774b1d0204c192c)
-* [scifiTerminal](https://sketchfab.com/3d-models/sci-fi-terminal-04af7eacb07541fe848bc8a258577858)
-* [finalDoor](https://sketchfab.com/3d-models/sci-fi-door-c6a6ef337b6c4f51ba68c2f0708c9622)
-* [slideDoor](https://sketchfab.com/3d-models/blast-doors-59ecab6f05a14ab490a11f4107384324)
-* [key](https://sketchfab.com/3d-models/key-7a0f6aaffe604d65bb560955990ce68b)
-* [pinPad](https://sketchfab.com/3d-models/security-pin-pad-2d72f06a3ce64fdab40b858b5107f843)
-* [notepad](https://sketchfab.com/3d-models/notepad-b09de807134b49eeb6e752ac2dc4e853)
-* [scifiTable](https://sketchfab.com/3d-models/sci-fi-table-simple-f7c3a3e44a144cb190bdd318da293b10)
-* [arrow](https://sketchfab.com/3d-models/arrow-7b62dae60f2c4443b9f499c833171ca5)
-* [cup](https://sketchfab.com/3d-models/rocket-league-cuptrophy-1bffb11f751641048ceb5f4704448d1a)
+-   [robotExpressive](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
+-   [sciFiCrate](https://sketchfab.com/3d-models/gart-130-task-2-sci-fi-crate-b0e057741926412fbcebb4bc74fd775d)
+-   [desk](https://sketchfab.com/3d-models/lab-table-a6585466b3bb4417bd0338c74328b209)
+-   [oscilloscope](https://sketchfab.com/3d-models/oscillograph-2e045af8198542a4b8d06d1d736c840b)
+-   [desk2](https://sketchfab.com/3d-models/lab-bench-1ac2a62c52a848bbaf746146dc7253f8)
+-   [desk3](https://sketchfab.com/3d-models/lab-bench-1ac2a62c52a848bbaf746146dc7253f8)
+-   [caldurun](https://market.pmnd.rs/model/cauldron)
+-   [redButton](https://sketchfab.com/3d-models/red-button-e7685cccf7364682bc6a7883d0b8c503)
+-   [sign](TODO)
+-   [bucket](https://market.pmnd.rs/model/wood-bucket)
+-   [hologramConsole](https://sketchfab.com/3d-models/hologram-console-bfbbb481e98e4be38774b1d0204c192c)
+-   [scifiTerminal](https://sketchfab.com/3d-models/sci-fi-terminal-04af7eacb07541fe848bc8a258577858)
+-   [finalDoor](https://sketchfab.com/3d-models/sci-fi-door-c6a6ef337b6c4f51ba68c2f0708c9622)
+-   [slideDoor](https://sketchfab.com/3d-models/blast-doors-59ecab6f05a14ab490a11f4107384324)
+-   [key](https://sketchfab.com/3d-models/key-7a0f6aaffe604d65bb560955990ce68b)
+-   [pinPad](https://sketchfab.com/3d-models/security-pin-pad-2d72f06a3ce64fdab40b858b5107f843)
+-   [notepad](https://sketchfab.com/3d-models/notepad-b09de807134b49eeb6e752ac2dc4e853)
+-   [scifiTable](https://sketchfab.com/3d-models/sci-fi-table-simple-f7c3a3e44a144cb190bdd318da293b10)
+-   [arrow](https://sketchfab.com/3d-models/arrow-7b62dae60f2c4443b9f499c833171ca5)
+-   [cup](https://sketchfab.com/3d-models/rocket-league-cuptrophy-1bffb11f751641048ceb5f4704448d1a)
 
 ### Load
 
@@ -225,7 +227,7 @@ All the models are loaded with the help of `GLTFLoader` according with and async
 async loadModels() {
 	let promises, models;
 	promises = models = [];
-	
+
 	for(const info of MODELS_INFO) {
 		promises = promises.concat(this.gltfLoader.loadAsync(info.path))
 	}
@@ -332,7 +334,7 @@ export function get_center(object) {
 }
 ```
 
-This function exploits the properties of *ThreeJS* bounding boxes for computing the position center of a given object.
+This function exploits the properties of _ThreeJS_ bounding boxes for computing the position center of a given object.
 
 ### get_measure
 
@@ -349,7 +351,7 @@ export function get_measure(object) {
 }
 ```
 
-This function exploits the properties of *ThreeJS* bounding boxes for computing the sizes of a given object with respect to the three cardinal axes.
+This function exploits the properties of _ThreeJS_ bounding boxes for computing the sizes of a given object with respect to the three cardinal axes.
 
 # Lights and Textures
 
@@ -363,9 +365,9 @@ The imported textures used in the project are located in `src > textures`.
 
 Here a complete list of them, with the indication of their original source:
 
-* [ground](https://sketchfab.com/3d-models/star-wars-the-clone-wars-venator-prefab-8a1e1760391c4ac6a50373c2bf5efa2e)
-* [ground-metal](https://3dtextures.me/2021/09/23/sci-fi-metal-plate-003/)
-* [wall](https://sketchfab.com/3d-models/star-wars-the-clone-wars-venator-prefab-8a1e1760391c4ac6a50373c2bf5efa2e)
+-   [ground](https://sketchfab.com/3d-models/star-wars-the-clone-wars-venator-prefab-8a1e1760391c4ac6a50373c2bf5efa2e)
+-   [ground-metal](https://3dtextures.me/2021/09/23/sci-fi-metal-plate-003/)
+-   [wall](https://sketchfab.com/3d-models/star-wars-the-clone-wars-venator-prefab-8a1e1760391c4ac6a50373c2bf5efa2e)
 
 ### Load
 
@@ -375,7 +377,7 @@ All the textures are loaded with the help of `TextureLoader` according with an a
 async loadTextures() {
 	let promises, textures;
 	promises = textures = [];
-	
+
 	for(const info of TEXTURES_INFO) {
 		promises = promises.concat(this.textureLoader.loadAsync(info.path))
 	}
@@ -427,7 +429,7 @@ async function setTextures() {
 
 #### Ground
 
-The texture named *ground* is applied to the ground of the main space, providing also a bump mapping. We can see here some code snippets from `src > App > MainRoom.js`:
+The texture named _ground_ is applied to the ground of the main space, providing also a bump mapping. We can see here some code snippets from `src > App > MainRoom.js`:
 
 ```
 [...]
@@ -453,7 +455,7 @@ and from `src > App > Utils > RoomFunctions.js`:
 ```
 export function create_ground(w, h, texture) {
 	[...]
-	const material = new  THREE.MeshPhongMaterial({ 
+	const material = new  THREE.MeshPhongMaterial({
         map: texture.baseColor,
         bumpMap: texture.normal
     });
@@ -463,12 +465,12 @@ export function create_ground(w, h, texture) {
 
 #### Ground-Metal
 
-The texture named *ground-metal* is applied to the ground of the rear space, the one which contains the trophy, providing also:
+The texture named _ground-metal_ is applied to the ground of the rear space, the one which contains the trophy, providing also:
 
-* normal mapping,
-* roughness mapping,
-* metalness mapping,
-* ambient occlusion mapping.
+-   normal mapping,
+-   roughness mapping,
+-   metalness mapping,
+-   ambient occlusion mapping.
 
 We can see here some code snippets from `src > App > TrophyRoom.js`:
 
@@ -497,9 +499,9 @@ We can see here some code snippets from `src > App > TrophyRoom.js`:
         mesh = create_ground(size.width, size.height, null);
         apply_texture(texture, mesh);
         mesh.name = objectName;
-        
+
         [...]
-        
+
         texture = clone_texture(texture);
         for(let [label, tex] of texture) {
             configure_texture(tex, {u: 12, v: 12}, THREE.RepeatWrapping);
@@ -516,7 +518,7 @@ Observe that this texture is applied following a repetition pattern which has di
 
 #### Wall
 
-The texture named *wall* is applied to all the walls within the scene, but with different mappings for the flat walls and the extruded ones.
+The texture named _wall_ is applied to all the walls within the scene, but with different mappings for the flat walls and the extruded ones.
 
 The standard walls receive the texture exactly with the same bump mapping already discussed for the ground.
 
@@ -527,7 +529,7 @@ export function create_wall_with_door(wallSize, doorSize, texture) {
 	[...]
     texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
     texture.repeat.set( 0.05, 0.05 );
-    const material = new THREE.MeshPhongMaterial({ 
+    const material = new THREE.MeshPhongMaterial({
         map: texture
     });
     const wall = new THREE.Mesh(extrudeGeometry, material);
@@ -553,7 +555,7 @@ export function configure_texture(texture, repeat, wrap) {
 }
 ```
 
-`wrapS` and `wrapT` properties define, respectively, how the texture is wrapped horizontally/vertically and corresponds to "U"/"V" in UV mapping. Wrapping parameters determine what happens if the texture coordinates *s* and *t* are outside the (0,1) range. In many cases in this project the "repeat" approach is adopted: the texture repeats itself infinite times along both axes.
+`wrapS` and `wrapT` properties define, respectively, how the texture is wrapped horizontally/vertically and corresponds to "U"/"V" in UV mapping. Wrapping parameters determine what happens if the texture coordinates _s_ and _t_ are outside the (0,1) range. In many cases in this project the "repeat" approach is adopted: the texture repeats itself infinite times along both axes.
 `repeat` property defines how many times the texture is repeated across the surface, in each direction U and V.
 
 #### apply_texture
@@ -564,7 +566,7 @@ export function apply_texture(texture, mesh) {
         && texture.get("metallic") != null
         && texture.get("roughness") != null
         && texture.get("ambientOcclusion") != null) {
-            mesh.material = new THREE.MeshStandardMaterial({ 
+            mesh.material = new THREE.MeshStandardMaterial({
                 map: texture.get("baseColor"),
                 normalMap: texture.get("normal"),
                 roughnessMap: texture.get("roughness"),
@@ -573,13 +575,13 @@ export function apply_texture(texture, mesh) {
             });
     }
     else if(texture.get("normal") != null) {
-        mesh.material = new THREE.MeshPhongMaterial({ 
+        mesh.material = new THREE.MeshPhongMaterial({
             map: texture.get("baseColor"),
             bumpMap: texture.get("normal")
         });
     }
     else {
-        mesh.material = new THREE.MeshPhongMaterial({ 
+        mesh.material = new THREE.MeshPhongMaterial({
             map: texture.get("baseColor"),
         });
     }
@@ -589,6 +591,23 @@ export function apply_texture(texture, mesh) {
 ```
 
 It applies the given texture to the given mesh. Note that `texture` parameter is actually a `Map` which could contain information about several mappings to be bound to the texture. If many mappings are present, the mesh needs a `MeshStandardMaterial` for a correct application of all of them. On the contrary, if the texture is paired with just a normal mapping, a `MeshPhongMaterial` with a bump mapping is chosen as performance-saving solution.
+
+# Physical Engine
+
+In order to give a realistic feel to the game we decided to implement a physical engine. After some research we elected `cannon-es` as best candidate. `Cannon-es` is a lightweight engine and a maintained fork of the more famous library cannon.js. It creates an alternative world where physics is present and each object inside this world is affected by the laws of physics decided by the parameters. Any object in the physical world is called `body` and it can be linked to any three.js mesh. In this way we obtained a realistic game with gravity and collisions. Each body have different properties like mass or material. If a body has a mass equals to 0 it means that it is a static and it will not be affected by any kind of force. In the following image we can appreciate all the bodies linked with threejs meshes in the scene.
+
+![Physical Bodies](images/collision%20boxes.png?raw=true)
+
+It's clearly visible that the lateral walls are higher that the meshes, this is to prevent the player falling out of the map.
+There is also an invisible wall in front of the map that has the same scope.
+
+## Robot collision box
+
+In order to make the robot interact with the environment we created a body that act like a collision box, then we linked them movement of the collision box to the movement of the robot’s mesh. The movement of the box is obtained by updating the velocity of the body along the x and z axis.
+
+## Jump
+
+In the same way as we update the horizontal velocity to make the robot move, we can update the y velocity to make the robot perform a jump. In order to not make the robot jump even when it’s in the air we created a list that contains the objects on top of which the robot can jump. Every time the robot collide with one of this the variable “canJump” is updated to true. Clearly when the robot is touching the ground the variable “canJump” is always true.
 
 # User Interaction
 

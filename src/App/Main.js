@@ -146,7 +146,7 @@ export default class Main {
     setRenderer() {
         this.renderer = new THREE.WebGLRenderer({
             alpha: false,
-            antialias: false,
+            antialias: true,
         });
         this.renderer.setPixelRatio(this.config.pixelRatio * 0.8);
         this.renderer.setSize(this.config.width, this.config.height);

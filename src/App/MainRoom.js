@@ -399,12 +399,12 @@ export default class MainRoom {
             shape: new CANNON.Box(
                 new CANNON.Vec3(
                     body.size.width / 2,
-                    body.size.height / 2,
+                    body.size.height,
                     body.size.depth / 2
                 )
             ),
         });
-        newBody.position.y = PERIMETER_WALL_SIZE.height / 2;
+        newBody.position.y = PERIMETER_WALL_SIZE.height;
         newBody.position.x =
             GROUND_SIZE.width / 2 +
             this.wallSizeMap.get("mainRoom.wall.big.vertical.right").width / 2;
@@ -427,12 +427,12 @@ export default class MainRoom {
             shape: new CANNON.Box(
                 new CANNON.Vec3(
                     body.size.width / 2,
-                    body.size.height / 2,
+                    body.size.height,
                     body.size.depth / 2
                 )
             ),
         });
-        newBody.position.y = PERIMETER_WALL_SIZE.height / 2;
+        newBody.position.y = PERIMETER_WALL_SIZE.height;
         newBody.position.x =
             -GROUND_SIZE.width / 2 -
             this.wallSizeMap.get("mainRoom.wall.big.vertical.right").width / 2;
