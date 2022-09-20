@@ -539,6 +539,7 @@ export function bodyDanceTween(robot) {
         .start();
 }
 
+//Function that makes the robot go to the initial position after the wave
 export function waveFinishTween(robot) {
     new TWEEN.Tween(robot.shoulderR.rotation)
         .to({ x: -0.10898371808911646, y: -6.598976085917453e-7, z: 2.686421566968824, }, 200)
@@ -564,47 +565,48 @@ export function waveFinishTween(robot) {
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
-    new TWEEN.Tween(robot.ring1R.rotation) //mignolo
+    new TWEEN.Tween(robot.ring1R.rotation)
         .to({ x: 2.0308031237629196, y: 0.9080663435840112, z: -0.9430903747676498, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
-    new TWEEN.Tween(robot.ring2R.rotation) //mignolo
+    new TWEEN.Tween(robot.ring2R.rotation)
         .to({ x: 0.2314505243580185, y: 0.16359926060669314, z: 0.8729432557646827, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
-    new TWEEN.Tween(robot.middle1R.rotation) //mignolo
+    new TWEEN.Tween(robot.middle1R.rotation)
         .to({ x: -0.06356590149694044, y: -0.06346705740446676, z: 1.1048657896799357, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
-    new TWEEN.Tween(robot.middle2R.rotation) //mignolo
+    new TWEEN.Tween(robot.middle2R.rotation)
         .to({ x: 0.09968116913559923, y: -0.03203014545859623, z: 1.061314611564705, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
-    new TWEEN.Tween(robot.indexR.rotation) //mignolo
+    new TWEEN.Tween(robot.indexR.rotation)
         .to({ x: -1.9068990040299865, y: -1.0366460832544102, z: -0.9294445756102357, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
-    new TWEEN.Tween(robot.index2R.rotation) //mignolo
+    new TWEEN.Tween(robot.index2R.rotation)
         .to({ x: -0.05851721796114638, y: -0.06463397545402096, z: 1.109980777526842, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
-    new TWEEN.Tween(robot.thumbR.rotation) //mignolo
+    new TWEEN.Tween(robot.thumbR.rotation)
         .to({ x: 2.8878214068890493, y: -0.9211440514236585, z: 1.3133193709709825, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 
-    new TWEEN.Tween(robot.thumb2R.rotation) //mignolo
+    new TWEEN.Tween(robot.thumb2R.rotation)
         .to({ x: -1.717841085700298, y: -0.639071107342826, z: -2.950171639213023, }, 100)
         .easing(TWEEN.Easing.Quadratic.Out)
         .start();
 }
 
+//Function that realizes the wave tween and calls the waveFinishTween() function
 export function waveTween(robot) {
     new TWEEN.Tween(robot.shoulderR.rotation)
         .to({ z: 1.5635 }, 200)
@@ -625,44 +627,43 @@ export function waveTween(robot) {
                 .to({ z: -0.2154 }, 150)
                 .easing(TWEEN.Easing.Quadratic.Out)
                 .start();
-            //.onComplete(() => {
 
-            new TWEEN.Tween(robot.ring1R.rotation) //mignolo
+            new TWEEN.Tween(robot.ring1R.rotation)
                 .to({ x: 2.0308031237629196, y: 0.9080663435840112, z: -2.3735, }, 100)
                 .easing(TWEEN.Easing.Quadratic.Out)
                 .start();
 
-            new TWEEN.Tween(robot.ring2R.rotation) //mignolo
+            new TWEEN.Tween(robot.ring2R.rotation)
                 .to({ x: -0.1219, y: -0.0766, z: 0.0899 }, 100)
                 .easing(TWEEN.Easing.Quadratic.Out)
                 .start();
 
-            new TWEEN.Tween(robot.middle1R.rotation) //mignolo
+            new TWEEN.Tween(robot.middle1R.rotation)
                 .to({ x: -0.06356590149694044, y: -0.06346705740446676, z: -0.0904, }, 100)
                 .easing(TWEEN.Easing.Quadratic.Out)
                 .start();
 
-            new TWEEN.Tween(robot.middle2R.rotation) //mignolo
+            new TWEEN.Tween(robot.middle2R.rotation)
                 .to({ x: 0.09968116913559923, y: -0.03203014545859623, z: 0.2639, }, 100)
                 .easing(TWEEN.Easing.Quadratic.Out)
                 .start();
 
-            new TWEEN.Tween(robot.indexR.rotation) //mignolo
+            new TWEEN.Tween(robot.indexR.rotation)
                 .to({ x: -1.9068990040299865, y: -1.1349, z: -2.0538, }, 100)
                 .easing(TWEEN.Easing.Quadratic.Out)
                 .start();
 
-            new TWEEN.Tween(robot.index2R.rotation) //mignolo
+            new TWEEN.Tween(robot.index2R.rotation)
                 .to({ x: -0.05851721796114638, y: -0.06463397545402096, z: 0.0451, }, 100)
                 .easing(TWEEN.Easing.Quadratic.Out)
                 .start();
 
-            new TWEEN.Tween(robot.thumbR.rotation) //mignolo
+            new TWEEN.Tween(robot.thumbR.rotation)
                 .to({ x: 2.8878214068890493, y: -1.7593, z: 1.5259, }, 100)
                 .easing(TWEEN.Easing.Quadratic.Out)
                 .start();
 
-            new TWEEN.Tween(robot.thumb2R.rotation) //mignolo
+            new TWEEN.Tween(robot.thumb2R.rotation)
                 .to({ x: -2.8186, y: -0.8862, z: -2.9733 }, 100)
                 .easing(TWEEN.Easing.Quadratic.Out)
                 .start();
@@ -711,56 +712,54 @@ export function waveTween(robot) {
                         .start();
                 })
                 .start();
-            //})
-            //.start();
         })
         .start();
 }
 
-
+//Walk tween: right leg goes back left arm goes forward and then back to initial position
 export function rightToBackWalkTween(robot) {
     //Back
 
     new TWEEN.Tween(robot.upperArmL.rotation)
-        .to({ x: 0.0686 }, 400 / 2)
+        .to({ x: 0.0686 }, 200)
         .easing(TWEEN.Easing.Linear.None)
         .start();
     new TWEEN.Tween(robot.upperLegR.rotation)
-        .to({ x: 3.4, y: -0.0036, z: 0.0183 }, 400 / 2)
+        .to({ x: 3.4, y: -0.0036, z: 0.0183 }, 200)
         .easing(TWEEN.Easing.Linear.None)
         .start();
     new TWEEN.Tween(robot.footR.position)
-        .to({ x: -0.0066, y: 0.0012, z: -0.0059 }, 400 / 2)
+        .to({ x: -0.0066, y: 0.0012, z: -0.0059 }, 200)
         .easing(TWEEN.Easing.Linear.None)
         .start();
     new TWEEN.Tween(robot.footR.rotation)
-        .to({ x: -1.4369 }, 400 / 2)
+        .to({ x: -1.4369 }, 200)
         .easing(TWEEN.Easing.Linear.None)
         .start();
     new TWEEN.Tween(robot.lowerLegR.rotation)
-        .to({ x: 0.6162 }, 400 / 2)
+        .to({ x: 0.6162 }, 200)
         .easing(TWEEN.Easing.Linear.None)
 
         .onComplete(() => {
             //INITIAL POSITION
             new TWEEN.Tween(robot.upperArmL.rotation)
-                .to({ x: 0.3844815830256843 }, 400 / 2)
+                .to({ x: 0.3844815830256843 }, 200)
                 .easing(TWEEN.Easing.Linear.None)
                 .start();
             new TWEEN.Tween(robot.upperLegR.rotation)
-                .to({ x: 2.7391203645467432, y: 0.2547631701687732, z: 0.11865935999323499 }, 400 / 2)
+                .to({ x: 2.7391203645467432, y: 0.2547631701687732, z: 0.11865935999323499 }, 200)
                 .easing(TWEEN.Easing.Linear.None)
                 .start();
             new TWEEN.Tween(robot.footR.position)
-                .to({ x: -0.00636880612000823, y: 0.000305792083963752, z: 0.000570139964111149 }, 400 / 2)
+                .to({ x: -0.00636880612000823, y: 0.000305792083963752, z: 0.000570139964111149 }, 200)
                 .easing(TWEEN.Easing.Linear.None)
                 .start();
             new TWEEN.Tween(robot.footR.rotation)
-                .to({ x: -1.5383691568853148 }, 400 / 2)
+                .to({ x: -1.5383691568853148 }, 200)
                 .easing(TWEEN.Easing.Linear.None)
                 .start();
             new TWEEN.Tween(robot.lowerLegR.rotation)
-                .to({ x: 0.715752620423293, y: -4.961868483732194e-7, z: 3.4373933246063144e-7 }, 400 / 2)
+                .to({ x: 0.715752620423293, y: -4.961868483732194e-7, z: 3.4373933246063144e-7 }, 200)
                 .easing(TWEEN.Easing.Linear.None)
                 .start();
         })
@@ -768,61 +767,62 @@ export function rightToBackWalkTween(robot) {
 
 }
 
+//Walk tween: left leg goes back right arm goes forward and then back to initial position
 export function leftToBackWalkTween(robot) {
     new TWEEN.Tween(robot.upperArmR.rotation)
-        .to({ x: -3.5 }, 400 / 2)
+        .to({ x: -3.5 }, 200)
         .easing(TWEEN.Easing.Linear.None)
         .start();
 
     new TWEEN.Tween(robot.upperLegL.rotation)
-        .to({ x: 3.3, y: 0.0315, z: -0.0448 }, 400 / 2)
+        .to({ x: 3.3, y: 0.0315, z: -0.0448 }, 200)
         .easing(TWEEN.Easing.Linear.None)
         .start();
 
     new TWEEN.Tween(robot.footL.position)
-        .to({ x: 0.007, y: 0.0012, z: -0.0066 }, 400 / 2)
+        .to({ x: 0.007, y: 0.0012, z: -0.0066 }, 200)
         .easing(TWEEN.Easing.Linear.None)
         .start();
 
     new TWEEN.Tween(robot.footL.rotation)
-        .to({ x: -1.4369 }, 400 / 2)
+        .to({ x: -1.4369 }, 200)
         .easing(TWEEN.Easing.Linear.None)
         .start();
 
     new TWEEN.Tween(robot.lowerLegL.rotation)
-        .to({ x: 0.7, y: 1.630727074138696e-7, z: -2.2818463770589156e-7 }, 400 / 2)
+        .to({ x: 0.7, y: 1.630727074138696e-7, z: -2.2818463770589156e-7 }, 200)
         .easing(TWEEN.Easing.Linear.None)
         .onComplete(() => {
 
             new TWEEN.Tween(robot.upperArmR.rotation)
-                .to({ x: -3.00467658726543 }, 400 / 2)
+                .to({ x: -3.00467658726543 }, 200)
                 .easing(TWEEN.Easing.Linear.None)
                 .start();
 
             new TWEEN.Tween(robot.upperLegL.rotation)
-                .to({ x: 2.7479580378393664, y: -0.1554260117378598, z: -0.07532355032937453 }, 400 / 2)
+                .to({ x: 2.7479580378393664, y: -0.1554260117378598, z: -0.07532355032937453 }, 200)
                 .easing(TWEEN.Easing.Linear.None)
                 .start();
 
             new TWEEN.Tween(robot.footL.position)
-                .to({ x: 0.00636722007766366, y: 0.0004, z: 0.000570146774407476 }, 400 / 2)
+                .to({ x: 0.00636722007766366, y: 0.0004, z: 0.000570146774407476 }, 200)
                 .easing(TWEEN.Easing.Linear.None)
                 .start();
 
             new TWEEN.Tween(robot.footL.rotation)
-                .to({ x: -1.5383691568848288 }, 400 / 2)
+                .to({ x: -1.5383691568848288 }, 200)
                 .easing(TWEEN.Easing.Linear.None)
                 .start();
 
             new TWEEN.Tween(robot.lowerLegL.rotation)
-                .to({ x: 0.7157526204231796, y: 1.630727074138696e-7, z: -2.2818463770589156e-7 }, 400 / 2)
+                .to({ x: 0.7157526204231796, y: 1.630727074138696e-7, z: -2.2818463770589156e-7 }, 200)
                 .easing(TWEEN.Easing.Linear.None)
                 .start();
         })
         .start();
 }
 
-
+//Walk tween: right leg goes forward left arm goes back and then back to initial position
 export function rightToFrontWalkTween(robot) {
 
     new TWEEN.Tween(robot.upperArmL.rotation)
@@ -880,8 +880,9 @@ export function rightToFrontWalkTween(robot) {
                 .start();
         })
         .start();
-
 }
+
+//Walk tween: tilt of the robot while moving
 export function bodyWalkTweenPhase1(robot) {
 
     robot.leftToFront = false;
@@ -904,6 +905,7 @@ export function bodyWalkTweenPhase1(robot) {
         .start();
 }
 
+//Walk tween: tilt of the robot while moving
 export function bodyWalkTweenPhase2(robot) {
 
     robot.leftToFront = true;
@@ -926,6 +928,7 @@ export function bodyWalkTweenPhase2(robot) {
         .start();
 }
 
+//Walk tween: left leg goes forward right arm goes back and then back to initial position
 export function leftToFrontWalkTween(robot) {
 
     new TWEEN.Tween(robot.upperArmR.rotation)
@@ -981,7 +984,6 @@ export function leftToFrontWalkTween(robot) {
                 .start();
         })
         .start();
-
 }
 
 /* Makes the robot fall to the ground with the head displaced

@@ -26,18 +26,24 @@ The function `deathTween(robot)` simulates the death of the robot by making it f
 
 ## Robot Animation: Lean Tween
 
-The function that handles this animation, `leanTween(robot,angle)`, simply takes an angle of rotation to be used to make the robot lean forward and then go back to the initial postition.
+The function that handles this animation, `leanTween(robot, angle)`, simply takes an angle of rotation to be used to make the robot lean forward and then go back to the initial postition.
 This animation is coupled with the interaction with the bucket: the robot leans forward to see what the bin contains and then has to go back to the initial position.
 
 ## Robot Animation: Idle Tween
 
 In order to create such an animation, different functions were created to handle the rotation of the head and of the upper and lower legs of the robot and the position of its body. In order to produce an effective outcome, indeed, while the legs are moving to simulate the bending of the knees, the body is translated along the y axis and the head is rotated. The function `Math.random()` has been used to decide whether the robot should rotate its head to its left, to its right or sideways with different easing functions like the **bounce.inOut** to produce different effects.
 
-## Robot Animation: Walk Tween & Turn Tweens
+## Robot Animation: Turn Tweens
 
 `turnRightTween(robot)`, `turnFrontTween(robot)`, `turnBackTween(robot)` and `turnLeftTween(robot)` realize the animation to change the orientation of the robot. They are often used to put its body in the right position for an effective interaction with the objects in the scene, as it happens with the pinpad, the bucket and the red button, but they are important especially because they are associated to the arrow keys, to make the robot turn in the direction of the walk.
 
+## Robot Animation: Walk Tween
+
+The walk animation is the one that required most attention as it had to be synched with the movement triggered by the press of the arrow keys. In order to do so, a semaphore is used in such a way that a new walk animation can not begin if the previous has not been completed yet. Also, to handle the fact that the arrows can be pressed once to make the robot do just one step, a boolean variable `leftToFront` is used to understand which leg has to be put forward and which backward but also to realize an alternation between them, not to make the robot begin the walk always with the same leg. To make the animation run as smooth as possible, while the left leg goes forward and the right leg goes backward, the left arm goes backward and the right arm goes forward and the body is rotated along the z axis to simulate the weight of the robot shifting between legs during the movement. All of this is realized in the functions `rightToBackWalkTween(robot)`, `leftToBackWalkTween(robot)`, `rightToFrontWalkTween(robot)`, `leftToFrontWalkTween(robot)`, `bodyWalkTweenPhase1(robot)` and `bodyWalkTweenPhase2(robot)`.
+
 ## Robot Animation: Wave Tween
+
+`waveTween(robot)` and `waveFinishTween(robot)` realize the animation for the greeting of the player at the beginning of the game. While the latter simply drives the animation for making the robot return to a neutral position, the former really does the work handling the rotation of the right shoulder and upper arm, the tilt of the head, the opening of the right hand through a movement of the components of the fingers as well as the rotation along the _y_ axis of the lower part of the right arm to create a waving movement.
 
 ## Robot Animation: Thumbs Up Tween
 

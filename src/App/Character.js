@@ -1266,6 +1266,7 @@ export default class Character {
                         this.characterBody.position.x >= -6.0 &&
                         this.characterBody.position.x <= 6.0
                     ) {
+                        turnBackTween(this).start();
                         console.log("FINAL DOOR KNOCK");
                         this.main.closeUpActive = true;
                         this.main.camera.goLookFinalDoor();
