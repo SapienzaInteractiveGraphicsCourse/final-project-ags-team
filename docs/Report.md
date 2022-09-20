@@ -17,7 +17,7 @@ codice block
 
 Immagine:
 
-![Placeholder](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/images/ph.png&raw=true)
+![Placeholder](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/images/ph.png?raw=true)
 
 ## Bonus
 
