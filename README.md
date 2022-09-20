@@ -1,5 +1,16 @@
-# Hello World!
+# 🤖 ROBOT ESCAPE
+![title](docs/images/title.png)
 
-An image:
+Final project for the Interactive Graphics Course 2022.
 
-![ph](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/ph.png?raw=true)
+# 🌐 Browser Testing
+
+| **Browser** 	| **Performance** 	|
+|-------------	|:---------------:	|
+| Firefox     	|        ⭐️⭐️⭐️    	 |
+| Chrome      	|        ⭐️⭐️⭐️    	 |
+| Safari      	|        ⭐️⭐️    	   |
+| Edge        	|        ⭐️⭐️        |
+
+# 🕹 Play the game
+Play the game here ➡️ https://sapienzainteractivegraphicscourse.github.io/final-project-ags-team/

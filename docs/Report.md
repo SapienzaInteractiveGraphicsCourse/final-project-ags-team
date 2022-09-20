@@ -610,6 +610,24 @@ In the same way as we update the horizontal velocity to make the robot move, we 
 
 # User Interaction
 
+## Difficulty Settings
+
+As the user opens the application the landing page shows up. Here the user can read the set of rules or select the difficulty that he wants. There are three levels of difficulty: Easy, Medium and Hard (2020). The difficulty setting will affects the timer and the hints in the scene in this way:
+
+|       	| Easy  	| Medium 	| Hard 	|  
+|-------	|-------	|--------	|------	|
+| Time  	| 4 min 	| 2 min  	| 90 s 	|  
+| Hints 	| 4     	| 2      	| 0    	|  
+
+# Interaction with objects
+
+During the game the robot needs to interact with some objects in order to complete the challenge. When the robot is inside the activation zone of an object the user can press `E` to activate an animation that bring the camera near the robot and shows the  interaction. If the E key is pressed but the robot is not inside activation zone the robot will shake its head. Pressing the exit button on the top right part of the screen will resume the game bringing the camera to the original position.
+To let the user know when he's inside an activation zone a icon of the E key will appear on the top left part of the screen.
+
+![Interaction](images/interaction1.png?raw=true)
+
+
+
 # Animation
 
 ## Robot Animation
