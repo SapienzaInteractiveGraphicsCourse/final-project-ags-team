@@ -739,26 +739,6 @@ export default class MainRoom {
         newBody.position.y = height;
         this.physics.addBody(newBody);
 
-        /**
-         * Desk2
-         */
-
-        object = this.scene.getObjectByName("mainRoom.desk2");
-
-        object.position.set(-27, 1.5, -5);
-        object.rotation.y = Math.PI / 2;
-        enableShadows(object);
-        object.scale.set(3, 3, 3);
-
-        height = 5;
-
-        newBody = new CANNON.Body({
-            type: CANNON.Body.STATIC,
-            shape: new CANNON.Box(new CANNON.Vec3(1.5, height, 4)),
-        });
-        newBody.position.copy(object.position);
-        newBody.position.y = height;
-        this.physics.addBody(newBody);
 
         /**
          * Desk3

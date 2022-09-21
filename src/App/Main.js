@@ -64,8 +64,8 @@ export default class Main {
         this.finalDoorOpen = false;
         this.gameWon = false;
 
-        this.gui = new GUI();
-        this.gui.close();
+        // this.gui = new GUI();
+        // this.gui.close();
         this.stats = new Stats();
         document
             .getElementById("controls-container")

@@ -6,7 +6,6 @@ export const MODELS_INFO = [
     { name: "mainRoom.sciFiCrate", path: MODELS_BASE_PATH + "sci-fi_crate/scene.gltf" },
     { name: "mainRoom.desk", path: MODELS_BASE_PATH + "desk.glb" },
     { name: "mainRoom.oscilloscope", path: MODELS_BASE_PATH + "oscilloscope.glb" },
-    { name: "mainRoom.desk2", path: MODELS_BASE_PATH + "desk2.glb" },
     { name: "mainRoom.desk3", path: MODELS_BASE_PATH + "desk3.glb" },
     { name: "mainRoom.caldurun", path: MODELS_BASE_PATH + "calduron.glb" },
     { name: "mainRoom.redButton", path: MODELS_BASE_PATH + "redButton.glb" },
