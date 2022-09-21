@@ -354,7 +354,42 @@ This function exploits the properties of *ThreeJS* bounding boxes for computing 
 
 # Lights and Textures
 
-## Lights
+## Lights and Shadows
+
+The scene contains the following lights:
+
+* 1x `AmbientLight`
+* 3x `DirectionalLight`
+* 3x `PointLight`
+
+Shadows are realized through the built-in *ThreeJS* renderer shadow map.
+Just a single directional light casts shadows. All the objects, except from the walls and the grounds, cast shadows. The grounds receive shadows.
+
+### Ambient Light
+
+//TODO
+
+### Directional Lights
+
+![Directional Lights](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/images/Directional_Lights%5Bmod%5D.jpg?raw=true)
+
+//TODO
+
+### Point Lights
+
+![Point Lights - 1](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/images/Point_Lights-1%5Bmod%5D.jpg?raw=true)
+
+//TODO
+
+![Point Lights - 2](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/images/Point_Lights-2%5Bmod%5D.png?raw=true)
+
+//TODO
+
+### Shadows Configuration
+
+//TODO
+
+### Utils
 
 //TODO
 
