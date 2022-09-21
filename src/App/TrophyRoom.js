@@ -225,6 +225,8 @@ export default class TrophyRoom {
         let scaleFactor = 40;
         cup.scale.set(scaleFactor, scaleFactor, scaleFactor);
         cup.position.set(0, 0, -92);
+        //XXX debugging
+        // focus_on(cup, this.main.cameraControls);
     }
 
     instantiate() {
@@ -253,9 +255,6 @@ export default class TrophyRoom {
         object.translateY(
             GROUND_SIZE.height / 2 + referenceSize.depth + objectSize.height / 2
         );
-
-        //XXX debugging
-        // focus_on(object, this.main.cameraControls);
 
         // Room Ground
 

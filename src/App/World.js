@@ -7,6 +7,10 @@ import Models from "./Models.js";
 import MainRoom from "./MainRoom.js";
 import { CORRIDOR_WIDTH, GROUND_SIZE } from "./Utils/Constants.js";
 import TrophyRoom from "./TrophyRoom.js";
+import {
+    add_point_light_helper,
+    add_directional_light_helper
+} from "./Utils/Functions.js";
 
 export default class World {
     constructor() {
@@ -51,8 +55,8 @@ export default class World {
         this.directionalLight.shadow.bias = -0.0005;
         this.scene.add(this.directionalLight);
 
-        // let directionalLightHelper = new THREE.DirectionalLightHelper(this.directionalLight);
-        // this.scene.add(directionalLightHelper);
+        //XXX debugging
+        // add_directional_light_helper(this.directionalLight, this.scene);
 
         this.directionalLight2 = new THREE.DirectionalLight(
             "cornflowerBlue",
@@ -62,8 +66,8 @@ export default class World {
         this.directionalLight2.castShadow = false;
         this.scene.add(this.directionalLight2);
 
-        // let directionalLightHelper2 = new THREE.DirectionalLightHelper(this.directionalLight2);
-        // this.scene.add(directionalLightHelper2);
+        //XXX debugging
+        // add_directional_light_helper(this.directionalLight2, this.scene);
 
         this.directionalLight3 = new THREE.DirectionalLight(0xffffff, 0.3);
         this.directionalLight3.position.set(0, 40, 50);
@@ -75,8 +79,8 @@ export default class World {
         this.directionalLight3.target = target;
         this.scene.add(target);
 
-        // let directionalLightHelper3 = new THREE.DirectionalLightHelper(this.directionalLight3);
-        // this.scene.add(directionalLightHelper3);
+        //XXX debugging
+        // add_directional_light_helper(this.directionalLight3, this.scene);
 
         this.ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
         this.scene.add(this.ambientLight);
@@ -84,14 +88,14 @@ export default class World {
         this.pointLight = new THREE.PointLight("gold", 2, 120.0, 2);
         this.pointLight.position.set(0, 20, -80);
         this.scene.add(this.pointLight);
-
-        // this.scene.add(new THREE.PointLightHelper(this.pointLight));
+        //XXX debugging
+        // add_point_light_helper(this.pointLight, 1, this.scene);
 
         this.pointLightCup = new THREE.PointLight("white", 2, 30.0);
         this.pointLightCup.position.set(0, 2, -85);
         this.scene.add(this.pointLightCup);
-
-        // this.scene.add(new THREE.PointLightHelper(this.pointLightCup));
+        //XXX debugging
+        // add_point_light_helper(this.pointLightCup, 1, this.scene);
     }
 
     setRooms() {

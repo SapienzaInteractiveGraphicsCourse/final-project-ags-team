@@ -4,6 +4,7 @@ import * as CANNON from "../three/libs/cannon-es.js";
 import {
     add_axes_helper,
     add_box_helper,
+    add_point_light_helper,
     get_center,
     get_measure,
     enableShadows,
@@ -849,6 +850,8 @@ export default class MainRoom {
         bucketLight.position.copy(object.position);
         bucketLight.castShadow = false;
         this.scene.add(bucketLight);
+        //XXX debugging
+        // add_point_light_helper(bucketLight, 1, this.scene);
 
         /**
          * Final Door

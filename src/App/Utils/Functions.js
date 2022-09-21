@@ -4,6 +4,14 @@ import {OrbitControls} from "../../three/controls/OrbitControls.js";
 
 // OBJECT
 
+export function add_to_the_scene(objects, scene) {
+    if(Array.isArray(objects))
+        for(const object of objects)
+            scene.add(object);
+    else
+        scene.add(objects)
+}
+
 export function add_axes_helper(object) {
     /**
      * AXES HELPER
@@ -78,6 +86,27 @@ export function enableShadows(object) {
             child.receiveShadow = true;
         }
     });
+}
+
+// LIGHTING
+
+export function enable_shadows(object, cast, receive) {
+    object.traverse(function (child) {
+        if (child.isMesh) {
+            child.castShadow = cast;
+            child.receiveShadow = receive;
+        }
+    });
+}
+
+export function add_directional_light_helper(light, scene) {
+    const helper = new THREE.DirectionalLightHelper(light);
+    add_to_the_scene(helper, scene);
+}
+
+export function add_point_light_helper(light, sphereSize, scene) {
+    const helper = new THREE.PointLightHelper(light, sphereSize);
+    add_to_the_scene(helper, scene);
 }
 
 // CAMERA
