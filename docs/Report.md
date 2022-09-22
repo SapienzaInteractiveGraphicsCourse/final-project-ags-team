@@ -220,7 +220,6 @@ Here a complete list of them, with the indication of their original source (the 
 * [sciFiCrate](https://sketchfab.com/3d-models/gart-130-task-2-sci-fi-crate-b0e057741926412fbcebb4bc74fd775d)
 * [desk](https://sketchfab.com/3d-models/lab-table-a6585466b3bb4417bd0338c74328b209)
 * [oscilloscope](https://sketchfab.com/3d-models/oscillograph-2e045af8198542a4b8d06d1d736c840b)
-* [desk2](https://sketchfab.com/3d-models/lab-bench-1ac2a62c52a848bbaf746146dc7253f8)
 * [desk3](https://sketchfab.com/3d-models/lab-bench-1ac2a62c52a848bbaf746146dc7253f8)
 * [caldurun](https://market.pmnd.rs/model/cauldron)
 * [redButton](https://sketchfab.com/3d-models/red-button-e7685cccf7364682bc6a7883d0b8c503)
