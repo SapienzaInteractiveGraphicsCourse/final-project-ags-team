@@ -26,10 +26,29 @@ E_1 = \Delta U_1 T + \Delta V_1 B \\
 E_2 = \Delta U_2 T + \Delta V_2 B
 \end{align}$$
 
+
+*ROBOT-ESCAPE* is an escape room themed game in which the robot protagonist has to solve some mini challenges in a given amount of time in order to win and collect a trophy. The robot can wander in a sci-fi environment and interact with objects that may be useful to solve the challenges or may distract it in pursuing its goal, just as in a real escape room. The player has to open four doors in order to win the game by collecting a key, moving an object to reveal a secret code, pressing a button and knocking on a door. Dancing tunes and sliding doors sounds together with different animations played by the character, the doors and even the camera, accompany the player throughout the game.
+
 # Objects
 
 The entire scene is composed by the following objects:
 //TODO
+
+## LIGHT BULBS
+The three light bulbs were realized as rectangular cuboids thanks to the `BoxGeometry` class and positioned right above the doors in the main room with a code similar to the following:
+```
+const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+        const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+        object = new THREE.Mesh(geometry, material);
+        object.name = "bulbRight";
+        this.objects["bulbRight"] = object;
+        object.position.set(10.1, 11.5, 0);
+        this.scene.add(object);
+```
+Just as when a door is opened, the color of the material changes from red to green through the following line of code
+```
+this.main.scene.getObjectByName("bulbLeftRear").material.color.set(0x00ff00);
+```
 
 ## Grounds
 
@@ -731,3 +750,20 @@ The functions that handles the doors animations are `openLeftDoor(door)`, `operR
 ## Camera Animations
 
 Even the camera is subject to changes in values of rotation and position over time to change the point of view. This is doneto see more clearly objects like the desks, the bucket and the pinpad but also to accompany and highlighting the beginning of the game, the doors animations and the final victory dance. In these cases, the animations are realized in the file *Camera.js*
+
+# Libraries & Tools
+* [Three.js](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
+* [Tween.js](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
+* [Cannon.js](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
+* [lil-gui](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
+# 🌐 Browser Testing
+
+| **Browser** 	| **Performance** 	|
+|-------------	|:---------------:	|
+| Firefox     	|        ⭐️⭐️⭐️    	 |
+| Chrome      	|        ⭐️⭐️⭐️    	 |
+| Safari      	|        ⭐️⭐️    	   |
+| Edge        	|        ⭐️⭐️        |
+
+# 🕹 Play the game
+Play the game here ➡️ https://sapienzainteractivegraphicscourse.github.io/final-project-ags-team/

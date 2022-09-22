@@ -888,12 +888,12 @@ export function bodyWalkTweenPhase1(robot) {
     robot.leftToFront = false;
 
     new TWEEN.Tween(robot.body.rotation)
-        .to({ z: 0.0468 }, 400 / 2)
+        .to({ z: -0.0307 }, 200)
         .easing(TWEEN.Easing.Linear.None)
         .onComplete(() => {
 
             new TWEEN.Tween(robot.body.rotation)
-                .to({ z: -8.866098996840159e-30 }, 400 / 2)
+                .to({ z: -8.866098996840159e-30 }, 200)
                 .easing(TWEEN.Easing.Linear.None)
                 .onComplete(() => {
 
@@ -911,12 +911,12 @@ export function bodyWalkTweenPhase2(robot) {
     robot.leftToFront = true;
 
     new TWEEN.Tween(robot.body.rotation)
-        .to({ z: -0.0307 }, 400 / 2)
+        .to({ z: 0.0468 }, 200)
         .easing(TWEEN.Easing.Linear.None)
         .onComplete(() => {
 
             new TWEEN.Tween(robot.body.rotation)
-                .to({ z: -8.866098996840159e-30 }, 400 / 2)
+                .to({ z: -8.866098996840159e-30 }, 200)
                 .easing(TWEEN.Easing.Linear.None)
                 .onComplete(() => {
 
