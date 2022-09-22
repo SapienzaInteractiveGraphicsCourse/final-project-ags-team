@@ -225,7 +225,7 @@ Here a complete list of them, with the indication of their original source (the 
 * [desk3](https://sketchfab.com/3d-models/lab-bench-1ac2a62c52a848bbaf746146dc7253f8)
 * [caldurun](https://market.pmnd.rs/model/cauldron)
 * [redButton](https://sketchfab.com/3d-models/red-button-e7685cccf7364682bc6a7883d0b8c503)
-* sign: we created this object in blender since it is a very simple one. It's composed only of two meshes.
+* sign: we created this object in [blender](https://www.blender.org/) since it is a very simple one. It's composed only of two meshes.
 * [bucket](https://market.pmnd.rs/model/wood-bucket)
 * [hologramConsole](https://sketchfab.com/3d-models/hologram-console-bfbbb481e98e4be38774b1d0204c192c)
 * [scifiTerminal](https://sketchfab.com/3d-models/sci-fi-terminal-04af7eacb07541fe848bc8a258577858)
