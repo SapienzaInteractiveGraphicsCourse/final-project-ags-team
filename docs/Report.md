@@ -386,31 +386,88 @@ Just a single directional light casts shadows. All the objects, except from the 
 
 ### Ambient Light
 
-//TODO
+| Color           | Intensity |
+|-----------------|-----------|
+| White (#FFFFFF) | 0.3       |
 
 ### Directional Lights
 
 ![Directional Lights](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/images/Directional_Lights%5Bmod%5D.jpg?raw=true)
 
-//TODO
+| Light | Color                     | Intensity | Position      | Cast Shadow |
+| ----- | ------------------------- | --------- | ------------- | ----------- |
+| A     | Malibu like     (#8888FF) | 2         | ( 30, 60, 30) | Yes         |
+| B     | Cornflower Blue (#6495ED) | 2         | (-30, 40, 30) | No          |
+| C     | White           (#FFFFFF) | 0.3       | (  0, 40, 50) | No          |
 
 ### Point Lights
 
 ![Point Lights - 1](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/images/Point_Lights-1%5Bmod%5D.jpg?raw=true)
 
-//TODO
+| Color               | Intensity | Max Range | Cast Shadow |
+|---------------------|-----------|-----------|-------------|
+| Deep Pink (#FF1493) | 2         | 4         | No          |
 
 ![Point Lights - 2](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/images/Point_Lights-2%5Bmod%5D.png?raw=true)
 
-//TODO
+| Light | Color           | Intensity | Max Range | Decay | Position     | Cast Shadow |
+|-------|-----------------|-----------|-----------|-------|--------------|-------------|
+| A     | Gold  (#FFD700) | 2         | 120       | 2     | (0, 20, -80) | No          |
+| B     | White (#FFFFFF) | 2         | 30        | 1     | (0,  2, -85) | No          |
 
 ### Shadows Configuration
 
-//TODO
+From `src > App > Main.js`:
+
+```
+setRenderer() {
+	[...]
+	this.renderer.shadowMap.enabled = true;
+	this.renderer.shadowMap.type = THREE.VSMShadowMap;
+	[...]
+}
+```
+
+From `src > App > World.js`:
+
+```
+setLights() {
+	[...]
+	this.directionalLight.shadow.camera.near = 10;
+	this.directionalLight.shadow.camera.far = 150;
+	this.directionalLight.shadow.camera.right = 60;
+	this.directionalLight.shadow.camera.left = -60;
+	this.directionalLight.shadow.camera.top = 60;
+	this.directionalLight.shadow.camera.bottom = -60;
+	this.directionalLight.shadow.mapSize.width = (1024 * 2) / 3;
+	this.directionalLight.shadow.mapSize.height = (1024 * 2) / 3;
+	this.directionalLight.shadow.radius = 4;
+	this.directionalLight.shadow.bias = -0.0005;
+	[...]
+}
+```
 
 ### Utils
 
-//TODO
+Several different functions are exploited to accomplish common tasks relative to lighting.
+We report here one of the most meaningful.
+
+#### enable_shadows
+
+`src > App > Utils > Functions.js`:
+
+```
+export function enable_shadows(object, cast, receive) {
+    object.traverse(function (child) {
+        if (child.isMesh) {
+            child.castShadow = cast;
+            child.receiveShadow = receive;
+        }
+    });
+}
+```
+
+It handles the shadow configurations for an object with a hierarchical structure. `cast` and `receive` are boolean parameters used to establish if the given object should cast shadows, receive shadows, both or none.
 
 ## Textures
 
