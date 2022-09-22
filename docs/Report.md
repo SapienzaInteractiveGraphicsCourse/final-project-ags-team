@@ -808,11 +808,13 @@ The functions that handles the doors animations are `openLeftDoor(door)`, `operR
 Even the camera is subject to changes in values of rotation and position over time to change the point of view. This is done to see more clearly objects like the desks, the bucket and the pinpad but also to accompany and highlighting the beginning of the game, the doors animations and the final victory dance. In these cases, the animations are realized in the file *Camera.js*
 
 # Libraries & Tools
-* [Three.js](https://threejs.org)
-* [Tween.js](https://github.com/tweenjs/tween.js)
-* [Cannon-es.js](https://github.com/pmndrs/cannon-es)
-* [Cannon-es-debugger.js](https://github.com/pmndrs/cannon-es-debugger)
-* [lil-gui](https://www.npmjs.com/package/lil-gui)
+
+* [three.js - r141](https://github.com/mrdoob/three.js/releases/tag/r141)
+* [tween.js - v18.6.4](https://github.com/tweenjs/tween.js)
+* [cannon-es.js - v0.20.0](https://github.com/pmndrs/cannon-es)
+* [cannon-es-debugger.js - v1.0.0](https://github.com/pmndrs/cannon-es-debugger)
+* [lil-gui - v0.17.0](https://github.com/georgealways/lil-gui)
+
 # 🌐 Browser Testing
 
 | **Browser** 	| **Performance** 	|
