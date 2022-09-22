@@ -224,7 +224,7 @@ Here a complete list of them, with the indication of their original source (the 
 * [desk3](https://sketchfab.com/3d-models/lab-bench-1ac2a62c52a848bbaf746146dc7253f8)
 * [caldurun](https://market.pmnd.rs/model/cauldron)
 * [redButton](https://sketchfab.com/3d-models/red-button-e7685cccf7364682bc6a7883d0b8c503)
-* [sign](TODO)
+* sign: we created this object in blender since it is a very simple one. It's composed only of two meshes.
 * [bucket](https://market.pmnd.rs/model/wood-bucket)
 * [hologramConsole](https://sketchfab.com/3d-models/hologram-console-bfbbb481e98e4be38774b1d0204c192c)
 * [scifiTerminal](https://sketchfab.com/3d-models/sci-fi-terminal-04af7eacb07541fe848bc8a258577858)
@@ -752,11 +752,11 @@ The functions that handles the doors animations are `openLeftDoor(door)`, `operR
 Even the camera is subject to changes in values of rotation and position over time to change the point of view. This is done to see more clearly objects like the desks, the bucket and the pinpad but also to accompany and highlighting the beginning of the game, the doors animations and the final victory dance. In these cases, the animations are realized in the file *Camera.js*
 
 # Libraries & Tools
-* [Three.js](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
-* [Tween.js](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
-* [Cannon-es.js](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
-* [Cannon-es-debugger.js](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
-* [lil-gui](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
+* [Three.js](https://threejs.org)
+* [Tween.js](https://github.com/tweenjs/tween.js)
+* [Cannon-es.js](https://github.com/pmndrs/cannon-es)
+* [Cannon-es-debugger.js](https://github.com/pmndrs/cannon-es-debugger)
+* [lil-gui](https://www.npmjs.com/package/lil-gui)
 # 🌐 Browser Testing
 
 | **Browser** 	| **Performance** 	|
