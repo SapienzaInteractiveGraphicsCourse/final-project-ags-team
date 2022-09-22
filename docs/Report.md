@@ -754,7 +754,8 @@ Even the camera is subject to changes in values of rotation and position over ti
 # Libraries & Tools
 * [Three.js](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
 * [Tween.js](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
-* [Cannon.js](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
+* [Cannon-es.js](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
+* [Cannon-es-debugger.js](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
 * [lil-gui](https://github.com/mrdoob/three.js/tree/master/examples/models/gltf/RobotExpressive)
 # 🌐 Browser Testing
 
