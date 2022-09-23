@@ -109,7 +109,6 @@ export function leanTween(robot, angle) {
 export function neckTween(robot) {
 
     const num = Math.floor(Math.random() * 100) + 1;
-    console.log(num);
 
     if (num > 0 && num <= 20) {
         let tween = new TWEEN.Tween(robot.neck.rotation)
@@ -277,7 +276,7 @@ export function leftArmJumpTween(robot) {
 
 // Handles the turn of the robot to the right
 export function turnRightTween(robot) {
-    // console.log("right")
+
     let tween = new TWEEN.Tween(robot.rootNode.rotation)
         .to({ y: Math.PI / 2 }, 100)
         .easing(TWEEN.Easing.Cubic.Out);
@@ -286,7 +285,7 @@ export function turnRightTween(robot) {
 
 // Handles the turn of the robot to the left
 export function turnLeftTween(robot) {
-    // console.log("left")
+
     let tween = new TWEEN.Tween(robot.rootNode.rotation)
         .to({ y: -Math.PI / 2 }, 100)
         .easing(TWEEN.Easing.Cubic.Out);
@@ -295,7 +294,7 @@ export function turnLeftTween(robot) {
 
 // Handles the turn of the robot to the front
 export function turnFrontTween(robot) {
-    // console.log("front")
+
     let tween = new TWEEN.Tween(robot.rootNode.rotation)
         .to({ y: 0 }, 100)
         .easing(TWEEN.Easing.Cubic.Out);
@@ -304,7 +303,7 @@ export function turnFrontTween(robot) {
 
 // Handles the turn of the robot to the back
 export function turnBackTween(robot) {
-    // console.log("back")
+
     let tween = new TWEEN.Tween(robot.rootNode.rotation)
         .to({ y: Math.PI }, 100)
         .easing(TWEEN.Easing.Cubic.Out);

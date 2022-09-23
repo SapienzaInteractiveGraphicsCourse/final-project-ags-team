@@ -3,7 +3,7 @@ import Main from "./Main.js";
 import { OrbitControls } from "./../three/controls/OrbitControls.js";
 import { TWEEN } from "../three/libs/tween.module.min.js";
 import { activate_orbit_controls, get_center } from "./Utils/Functions.js";
-import { openRightDoor, openLeftDoor, waveTween } from "./Animations.js";
+import { openRightDoor, openLeftDoor, waveTween, idleBodyTween, idleLeftLowerLegTween, idleLeftUpperLegTween, idleRightLowerLegTween, idleRightUpperLegTween, neckTween } from "./Animations.js";
 import {
     leanTween,
     noTween,
@@ -114,6 +114,12 @@ export default class Camera {
             .to({ x: 0 })
             .easing(TWEEN.Easing.Quadratic.InOut)
             .onComplete(() => {
+                idleBodyTween(this.main.world.character).start();
+                idleLeftLowerLegTween(this.main.world.character).start();
+                idleLeftUpperLegTween(this.main.world.character).start();
+                idleRightLowerLegTween(this.main.world.character).start();
+                idleRightUpperLegTween(this.main.world.character).start();
+                neckTween(this.main.world.character).start();
                 document.getElementById("exit-button").style.opacity = 1;
                 document.getElementById("exit-button").style.cursor = "pointer";
                 document.getElementById("exit-button").style.pointerEvents = "initial";
@@ -156,25 +162,7 @@ export default class Camera {
             }, 4000)
             .easing(TWEEN.Easing.Quadratic.InOut)
             .start();
-        /* BUONO!
-            new TWEEN.Tween(this.mainCamera.position)
-            .to({
-                y: 10,
-                z: -80
 
-            }, 8000)
-            .easing(TWEEN.Easing.Quadratic.InOut)
-            .start();
-        /*
-        new TWEEN.Tween(this.mainCamera.position)
-            .to({
-                y: 90
-
-            }, 10000)
-            .delay(1500)
-            .easing(TWEEN.Easing.Quadratic.InOut)
-            .start();
-                    */
     }
 
     goLookBucket() {

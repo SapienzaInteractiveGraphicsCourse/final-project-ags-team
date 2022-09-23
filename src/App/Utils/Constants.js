@@ -53,6 +53,6 @@ export const WALL_COLOR = "sandybrown";
 
 
 // DIFFICULTY PARAMETERS
-export const EASY_TIMER = 241;
+export const EASY_TIMER = 271;
 export const MEDIUM_TIMER = 121;
 export const HARD_TIMER = 91;

@@ -1169,12 +1169,14 @@ export default class Character {
             if (this.keyboardE) {
                 //BLUE DESK ON THE RIGHT
                 if (z < -10.0 && z > -17.0 && x > 22.5) {
+                    turnRightTween(this).start();
                     this.main.camera.goLookRightBlueDesk();
                     this.main.closeUpActive = true;
                 }
 
                 //YELLOW DESK ON THE RIGHT
                 else if (x > 12.9 && x < 19.7 && z < -22.0) {
+                    turnBackTween(this).start();
                     this.main.camera.goLookYellowDesk();
                     this.main.closeUpActive = true;
                 }
