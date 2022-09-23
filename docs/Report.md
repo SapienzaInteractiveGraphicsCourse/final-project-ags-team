@@ -728,7 +728,7 @@ As the user opens the application the landing page shows up. Here the user can r
 
 |       	| Easy  	| Medium 	| Hard 	|  
 |-------	|-------	|--------	|------	|
-| Time  	| 4 min 	| 2 min  	| 90 s 	|  
+| Time  	| 4 min 30 s 	| 2 min  	| 90 s 	|  
 | Hints 	| 4     	| 2      	| 0    	|  
 
 # Interaction with Objects
