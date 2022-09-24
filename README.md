@@ -27,4 +27,4 @@ https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob
 
 * Ionta Antonio (1469982)
 * Laurenzi Giordano (1750070)
-* Teglia Simone (TODO<matricola>)
+* Teglia Simone (1836794)
