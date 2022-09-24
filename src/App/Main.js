@@ -26,7 +26,6 @@ export default class Main {
         const params = window.location.search;
         const urlParams = new URLSearchParams(params);
         let difficulty = urlParams.get("diff");
-        console.log(difficulty);
         return new Main({
             targetElement: document.querySelector(".main"),
             scene: scene,
@@ -82,8 +81,6 @@ export default class Main {
         this.maxClockValue = EASY_TIMER;
         this.startingAlertClock = this.maxClockValue * 0.1;
         this.clock = new THREE.Clock();
-        console.log(this.clock);
-        //this.clock.start();
         this.started = false;
         this.gameOver = 0;
         this.turn = 0;
@@ -98,7 +95,6 @@ export default class Main {
 
     setDifficultyParameters() {
         if (this.difficulty === "1") {
-            console.log("EASY");
             this.scene.getObjectByName("mainRoom.arrow").visible = true;
             this.scene.getObjectByName("mainRoom.arrowBucket").visible = true;
             this.scene.getObjectByName("mainRoom.arrowPinpad").visible = true;
@@ -106,7 +102,6 @@ export default class Main {
             this.maxClockValue = EASY_TIMER;
             this.startingAlertClock = this.maxClockValue * 0.1;
         } else if (this.difficulty === "2") {
-            console.log("MEDIUM");
             this.scene.getObjectByName("mainRoom.arrow").visible = true;
             this.scene.getObjectByName("mainRoom.arrowBucket").visible = false;
             this.scene.getObjectByName("mainRoom.arrowPinpad").visible = true;
@@ -114,7 +109,6 @@ export default class Main {
             this.maxClockValue = MEDIUM_TIMER;
             this.startingAlertClock = this.maxClockValue * 0.1;
         } else {
-            console.log("HARD");
             this.scene.getObjectByName("mainRoom.arrow").visible = false;
             this.scene.getObjectByName("mainRoom.arrowBucket").visible = false;
             this.scene.getObjectByName("mainRoom.arrowPinpad").visible = false;
@@ -256,7 +250,6 @@ async function setScene() {
     };
 
     manager.onLoad = function () {
-        console.log("Just finished loading models");
         // document.getElementById("loading-screen").style.opacity = 0;
         // document.getElementById("landing-page").style.opacity = 1;
     };

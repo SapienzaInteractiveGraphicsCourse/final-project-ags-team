@@ -355,7 +355,6 @@ export default class MainRoom {
         //         this.scene.getObjectByName("mainRoom.finalDoor").children[0]
         //             .children[0].children[0];
         //     let elem1 = door.children[0].children[0].children[1];
-        //     console.log(elem1);
         //     openFinalDoor(elem1);
         // };
 

@@ -1050,7 +1050,6 @@ export default class Character {
             this.main.started = true;
             this.main.camera.getCameraToPosition();
             document.getElementById("timer-button").style.opacity = 1;
-            console.log("start");
         }
         /**
          * MOVEMENT
@@ -1269,7 +1268,6 @@ export default class Character {
                         this.characterBody.position.x <= 6.0
                     ) {
                         turnBackTween(this).start();
-                        console.log("FINAL DOOR KNOCK");
                         this.main.closeUpActive = true;
                         this.main.camera.goLookFinalDoor();
                         document.getElementById("knock-audio").play();
@@ -1283,14 +1281,8 @@ export default class Character {
                             ).children[0].children[0].children[0];
                         let elem1 = door.children[0].children[0].children[1];
                         openFinalDoor(elem1);
-
-                        //this.main.camera.goFollowRobot();
-                        console.log(this.characterBody.position);
                     }
                 }
-                /*else if (this.characterBody.position.z <= -28.5) {
-                        console.log(this.characterBody.position)
-                    }*/
                 //TROPHY
                 else if (
                     this.characterBody.position.z <= -83 &&

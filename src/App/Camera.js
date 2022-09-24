@@ -126,7 +126,6 @@ export default class Camera {
 
     goToDistance() {
         const oldPosition = this.mainCamera.position;
-        console.log(this.mainCamera.rotation);
         document.getElementById("dance-audio").play();
         document.getElementById("timer-button").style.backgroundColor = "green";
         document.getElementById("timer-box-text").style.color = "white";
@@ -342,20 +341,17 @@ export default class Camera {
                 document.getElementById("exit-button").style.cursor = "pointer";
                 document.getElementById("exit-button").style.pointerEvents = "initial";
                 document.getElementById("input-box").focus();
-                console.log("Code = ?")
                 let code;
                 window.addEventListener("keydown", (e) => {
                     const { keyCode } = e;
                     if (keyCode === 13 && this.main.closeUpActive && this.main.pinPadActive) {
                         code = document.getElementById("input-box").value;
-                        console.log(code)
                         if (code == 3579) {
                             document.getElementById("input-box-container").style.opacity = 0;
                             document.getElementById("input-box-container").style.pointerEvents = "none";
                             document.getElementById("exit-button").style.opacity = 0;
                             document.getElementById("exit-button").style.cursor = "initial";
                             document.getElementById("exit-button").style.pointerEvents = "none";
-                            console.log("CORRECT!");
                             this.main.rightDoorOpen = true;
                             this.main.physics.bodies.find(object => object.name === "mainRoom.slideDoor.right").collisionFilterMask = 0;
                             let l = this.scene.getObjectByName("mainRoom.slideDoor.right").children[0].children[0].children[0];

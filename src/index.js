@@ -2,7 +2,6 @@ init();
 
 function init() {
     let difficulty = 1;
-    console.log("index.html");
 
     let easyButton = document.getElementById("easy-button");
     let mediumButton = document.getElementById("medium-button");
