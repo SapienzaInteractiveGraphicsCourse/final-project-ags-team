@@ -114,12 +114,6 @@ export default class Camera {
             .to({ x: 0 })
             .easing(TWEEN.Easing.Quadratic.InOut)
             .onComplete(() => {
-                idleBodyTween(this.main.world.character).start();
-                idleLeftLowerLegTween(this.main.world.character).start();
-                idleLeftUpperLegTween(this.main.world.character).start();
-                idleRightLowerLegTween(this.main.world.character).start();
-                idleRightUpperLegTween(this.main.world.character).start();
-                neckTween(this.main.world.character).start();
                 document.getElementById("exit-button").style.opacity = 1;
                 document.getElementById("exit-button").style.cursor = "pointer";
                 document.getElementById("exit-button").style.pointerEvents = "initial";
