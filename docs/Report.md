@@ -8,7 +8,7 @@ Authors:
 
 # 0. Download
 
-It is possible to download the full report in PDF format clicking [here](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/Report.pdf)
+It is possible to download the full report in PDF format clicking [here](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/raw/master/docs/Report.pdf)
 
 # 1. Introduction
 
