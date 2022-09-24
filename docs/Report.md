@@ -832,12 +832,14 @@ In these cases, the animations are realized in the file `src > App > Camera.js`
 
 # 8. Browser Testing
 
+The best user experience can be obtained with Firefox
+
 | **Browser** 	| **Performance** 	|
 |-------------	|:---------------:	|
 | Firefox     	|        ⭐️⭐️⭐️    	 |
-| Chrome      	|        ⭐️⭐️⭐️    	 |
+| Edge      	  |        ⭐️⭐️⭐️    	 |
 | Safari      	|        ⭐️⭐️    	   |
-| Edge        	|        ⭐️⭐️        |
+| Chrome        |        ⭐️        |
 
 # 9. Play the Game
 
