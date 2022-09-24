@@ -1,9 +1,10 @@
-# 🤖 ROBOT ESCAPE
-![title](docs/images/title.png)
+# &#129302; ROBOT ESCAPE
 
-Final project for the Interactive Graphics Course 2022.
+![title](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/images/title.png?raw=true)
 
-# 🌐 Browser Testing
+Final group project for "Interactive Graphics" academic course, master degree in "Engineering in Computer Science", "Sapienza, Università di Roma", A.Y. 2021/2022.
+
+# &#127760; Browser Testing
 
 | **Browser** 	| **Performance** 	|
 |-------------	|:---------------:	|
@@ -12,9 +13,17 @@ Final project for the Interactive Graphics Course 2022.
 | Safari      	|        ⭐️⭐️    	   |
 | Edge        	|        ⭐️⭐️        |
 
-# ✍️ Read the report
-https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/Report.md
+# &#128196; Read the Documentation
 
-# 🕹 Play the game
+https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/Report.md
+(also available in [PDF format](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/Report.pdf))
+
+# &#128377; Play the Game
+
 Play the game here ➡️ https://sapienzainteractivegraphicscourse.github.io/final-project-ags-team/
 
+# &#9997; Authors
+
+* Ionta Antonio (1469982)
+* Laurenzi Giordano (1750070)
+* Teglia Simone (TODO<matricola>)
