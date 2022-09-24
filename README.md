@@ -4,6 +4,11 @@
 
 Final group project for "Interactive Graphics" academic course, master degree in "Engineering in Computer Science", "Sapienza, Università di Roma", A.Y. 2021/2022.
 
+# &#128377; Play the Game
+
+Play the game here ➡️ https://sapienzainteractivegraphicscourse.github.io/final-project-ags-team/
+
+
 # &#127760; Browser Testing
 
 | **Browser** 	| **Performance** 	|
@@ -17,10 +22,6 @@ Final group project for "Interactive Graphics" academic course, master degree in
 
 https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/Report.md
 (also available in [PDF format](https://github.com/SapienzaInteractiveGraphicsCourse/final-project-ags-team/blob/master/docs/Report.pdf))
-
-# &#128377; Play the Game
-
-Play the game here ➡️ https://sapienzainteractivegraphicscourse.github.io/final-project-ags-team/
 
 # &#9997; Authors
 
