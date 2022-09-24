@@ -11,12 +11,14 @@ Play the game here ➡️ https://sapienzainteractivegraphicscourse.github.io/fi
 
 # &#127760; Browser Testing
 
+The best user experience can be obtained with Firefox
+
 | **Browser** 	| **Performance** 	|
 |-------------	|:---------------:	|
 | Firefox     	|        ⭐️⭐️⭐️    	 |
-| Chrome      	|        ⭐️⭐️⭐️    	 |
+| Edge      	  |        ⭐️⭐️⭐️    	 |
 | Safari      	|        ⭐️⭐️    	   |
-| Edge        	|        ⭐️⭐️        |
+| Chrome        |        ⭐️        |
 
 # &#128196; Read the Documentation
 
